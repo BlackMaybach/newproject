@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.registration.RegistrationFragment"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/toolbar2"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="350sp"
+        android:layout_gravity="center"
+        android:layout_height="100dp"
+        android:background="@drawable/inset_line"
+        android:layout_marginTop="40sp"
+        android:layout_marginBottom="10sp">
+
+        <TextView
+            android:id="@+id/tw"
+            style="@style/BigBoldTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:text="ДОБРО" />
+
+        <TextView
+            android:id="@+id/tw2"
+            style="@style/BigBoldTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tw"
+            android:layout_marginLeft="15sp"
+            android:text="ПОЖАЛОВАТЬ!" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginBottom="50sp"
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            style="@style/TinyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Для того чтобы продлжить вам необходимо авторизоваться в нашем мобильном приложении при помощи номера телефона." />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/tw3"
+            style="@style/MicroText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Номер телефона" />
+
+        <EditText
+            android:id="@+id/registrationPhoneET"
+            style="@style/PhoneET"
+            android:layout_below="@+id/tw3"
+            android:hint="+996700702095"
+            android:inputType="number"></EditText>
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="350sp"
+        android:layout_height="60dp"
+        android:layout_gravity="center">
+
+        <CheckBox
+            android:id="@+id/registrationCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/MicroText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Я принимаю"
+            android:textColor="@color/anotherGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/registrationCheckbox"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/toAgreementFragment"
+            style="@style/MicroText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="8dp"
+            android:text="условия"
+            android:textColor="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/MicroText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="лицензионного соглашения"
+            android:textColor="@color/anotherGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/btnToSmsFragment"
+            style="@style/ButtonYellow"
+            android:text="Продолжить"/>
+    </LinearLayout>
+
+</LinearLayout>

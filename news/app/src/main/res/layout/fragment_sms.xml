@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.registration.SmsFragment"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/toolbar2"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="350sp"
+        android:layout_gravity="center"
+        android:layout_height="100dp"
+        android:background="@drawable/inset_line"
+        android:layout_marginTop="40sp"
+        android:layout_marginBottom="10sp">
+
+        <TextView
+            android:id="@+id/tw"
+            style="@style/BigBoldTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:text="ПАРОЛЬ ИЗ СМС" />
+
+        <TextView
+            android:id="@+id/tw2"
+            style="@style/BigBoldTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tw"
+            android:layout_marginLeft="15sp"
+            android:text="СООБЩЕНИЯ" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginBottom="50sp"
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            style="@style/TinyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Мы выслали вам на указанный номер телефона СМС сообщение с кодом подтверждения авторизации." />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/tw3"
+            style="@style/MicroText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Код подтверждения из СМС" />
+
+        <EditText
+            android:id="@+id/smsCodeET"
+            style="@style/PhoneET"
+            android:layout_below="@+id/tw3"
+            android:hint="****"
+            android:inputType="number"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="350sp"
+        android:layout_height="60dp"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/MicroText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Можно выслать снова через:"
+            android:textColor="@color/anotherGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/countTime"
+            style="@style/MicroText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 сек"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/startCount"
+            app:layout_constraintHorizontal_bias="0.28"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/startCount"
+            style="@style/MicroText"
+            android:paddingStart="1sp"
+            android:paddingEnd="1sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мне не пришел код"
+            android:background="@drawable/bottom_line"
+            android:textColor="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/btnToPasswordFragment"
+            style="@style/ButtonYellow"
+            android:text="Продолжить"/>
+    </LinearLayout>
+
+</LinearLayout>

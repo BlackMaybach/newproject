@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.start.StartFragment"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar_start" />
+
+    <ImageView
+        android:layout_marginTop="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/settings" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5sp"
+            android:text="О портале"
+            style="@style/NormalBoldTitle"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Друзья, здесь Вы можете получить по паспорту Онлайн кредит до 15 000 сом,на электронный кошелек (Баланс/ Мегапэй/ О!Деньги/ Элсом) или карту Элкарт любого банка КР, НЕ ПРИХОДЯ в офис Компании!
+"
+            style="@style/NormalTitle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:layout_marginEnd="10sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Открыть сайт Компании:"
+            android:textColor="@color/anotherBlack"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="www.elet.kg"
+            android:textColor="@color/yellow"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5sp"
+            android:text="Вход или регистрация"
+            style="@style/NormalBoldTitle" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Друзья, здесь Вы можете получить по паспорту Онлайн кредит до 15 000 сом,на электронный кошелек (Баланс/ Мегапэй/ О!Деньги/ Элсом) или карту Элкарт любого банка КР, НЕ ПРИХОДЯ в офис Компании!
+"
+            style="@style/NormalTitle"  />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:layout_marginEnd="10sp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/loginFragment"
+            style="@style/ButtonYellow"
+            android:text="Войти"/>
+
+        <Button
+            android:id="@+id/regFragment"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            app:strokeColor="#F2A900"
+            android:text="ЗАРЕГИСТРИРОВАТЬСЯ"
+            android:textColor="@color/yellow"
+            android:textSize="15sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            />
+    </LinearLayout>
+
+</LinearLayout>

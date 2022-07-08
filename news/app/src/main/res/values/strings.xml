@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">newproject</string>
+    <string name="home">Главная</string>
+    <string name="credits">Кредиты</string>
+    <string name="addNew">Новый</string>
+    <string name="calculator">Калькулятор</string>
+    <string name="profile">Профиль</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

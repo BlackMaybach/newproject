@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginFragment"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/toolbar2"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="350sp"
+        android:layout_gravity="center"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:background="@drawable/inset_line"
+        android:layout_marginTop="40sp"
+        android:layout_marginBottom="10sp">
+
+        <TextView
+            android:id="@+id/tw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:text="Войти"
+            style="@style/BigBoldTitle"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginBottom="50sp"
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Для того чтобы продлжить вам необходимо авторизоваться в нашем мобильном приложении при помощи номера телефона."
+            style="@style/TinyText"  />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/tw3"
+            style="@style/MicroText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Номер телефона" />
+
+        <EditText
+            android:id="@+id/loginPhoneET"
+            style="@style/PhoneET"
+            android:layout_below="@+id/tw3"
+            android:hint="+996700702095"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/tw4"
+            style="@style/MicroText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Пароль" />
+
+        <EditText
+            android:id="@+id/loginPasswordET"
+            style="@style/PhoneET"
+            android:layout_below="@+id/tw4"
+            android:hint="Введите пароль"
+            android:inputType="textPassword"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/smsFragment"
+            style="@style/ButtonYellow"
+            android:text="Продолжить"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_menu"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.newproject.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/creditsFragment"
+        android:name="com.example.newproject.ui.credits.CreditsFragment"
+        android:label="fragment_credits"
+        tools:layout="@layout/fragment_credits" />
+    <fragment
+        android:id="@+id/addNewFragment"
+        android:name="com.example.newproject.ui.addNew.AddNewFragment"
+        android:label="fragment_add_new"
+        tools:layout="@layout/fragment_add_new" />
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.example.newproject.ui.calculator.CalculatorFragment"
+        android:label="fragment_calculator"
+        tools:layout="@layout/fragment_calculator" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.newproject.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.newproject.ui.start.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.newproject.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.newproject.ui.registration.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_agreementFragment"
+            app:destination="@id/agreementFragment" />
+        <argument
+            android:name="number"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_registrationFragment_to_smsFragment"
+            app:destination="@id/smsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agreementFragment"
+        android:name="com.example.newproject.ui.registration.AgreementFragment"
+        android:label="fragment_agreement"
+        tools:layout="@layout/fragment_agreement" >
+        <action
+            android:id="@+id/action_agreementFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:popUpTo="@id/agreementFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/smsFragment"
+        android:name="com.example.newproject.ui.registration.SmsFragment"
+        android:label="fragment_sms"
+        tools:layout="@layout/fragment_sms" >
+        <action
+            android:id="@+id/action_smsFragment_to_passwordFragment"
+            app:destination="@id/passwordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="com.example.newproject.ui.registration.PasswordFragment"
+        android:label="fragment_password"
+        tools:layout="@layout/fragment_password" >
+        <argument
+            android:name="code"
+            app:argType="integer" />
+    </fragment>
+</navigation>
