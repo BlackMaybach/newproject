@@ -61,4 +61,16 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <style name="margin10">
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+    </style>
+
+    <style name="mainDescriptionStep">
+        <item name="android:textColor">@color/anotherBlack</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+
 </resources>

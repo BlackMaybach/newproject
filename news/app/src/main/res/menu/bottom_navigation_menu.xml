@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="@string/home"
-        android:id="@+id/homeFragment"/>
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home"/>
     <item android:title="@string/credits"
-        android:id="@+id/creditsFragment"/>
+        android:id="@+id/creditsFragment"
+        android:icon="@drawable/blank"/>
     <item android:title="@string/addNew"
-        android:id="@+id/addNewFragment"/>
+        android:id="@+id/addNewFragment"
+        android:icon="@drawable/add"/>
     <item android:title="@string/calculator"
-        android:id="@+id/calculatorFragment"/>
+        android:id="@+id/calculatorFragment"
+        android:icon="@drawable/calc"/>
     <item android:title="@string/profile"
-        android:id="@+id/profileFragment"/>
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/profile"/>
 
 </menu>

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.newproject.R
 import com.example.newproject.databinding.FragmentPasswordBinding
@@ -40,8 +41,7 @@ class PasswordFragment : Fragment() {
             val pass = binding.newPassword.text.toString()
             val pass2 = binding.newPasswordDouble.text.toString()
                 if ((pass == pass2) && (pass.isNotEmpty() && pass2.isNotEmpty())) {
-                    Toast.makeText(context, "Пароли совпадают: $pass + $pass2", Toast.LENGTH_LONG)
-                        .show()
+                    findNavController().navigate(PasswordFragmentDirections.actionPasswordFragmentToHomeFragment())
                 } else {
                     Toast.makeText(context, "Пароли не совпадают", Toast.LENGTH_LONG).show()
                 }

@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:text="Главная"
                 app:titleTextColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:layout_marginStart="10sp"
                 android:textColor="@color/black"
                 />

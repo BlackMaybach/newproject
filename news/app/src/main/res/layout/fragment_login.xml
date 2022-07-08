@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
         <Button
-            android:id="@+id/smsFragment"
+            android:id="@+id/toHomeFragment"
             style="@style/ButtonYellow"
             android:text="Продолжить"/>
     </LinearLayout>

@@ -1,13 +1,13 @@
 package com.example.newproject.ui.start
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.newproject.R
 import com.example.newproject.databinding.FragmentStartBinding
 
 
@@ -22,7 +22,6 @@ class StartFragment : Fragment() {
         binding = FragmentStartBinding.inflate(inflater,container,false)
 
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,6 +33,11 @@ class StartFragment : Fragment() {
 
         binding.regFragment.setOnClickListener {
             findNavController().navigate(StartFragmentDirections.actionStartFragmentToRegistrationFragment(0))
+        }
+
+        binding.link.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.elet.kg"))
+            startActivity(i)
         }
     }
 
