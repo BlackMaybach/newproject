@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+<data>
+    <variable
+        name="viewModel"
+        type="com.example.newproject.ui.registration.RegistrationViewModel" />
+</data>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -129,3 +138,4 @@
     </LinearLayout>
 
 </LinearLayout>
+</layout>

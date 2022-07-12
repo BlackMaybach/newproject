@@ -68,6 +68,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="www.elet.kg"
+                    android:padding="1sp"
+                    android:background="@drawable/bottom_line"
                     android:textColor="@color/yellow"
                     android:textSize="14sp"
                     android:textStyle="bold" />

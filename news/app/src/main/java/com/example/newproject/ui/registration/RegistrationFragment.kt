@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.newproject.R
 import com.example.newproject.databinding.FragmentRegistrationBinding
+import com.example.newproject.ui.api.models.Register
 
 class RegistrationFragment : Fragment() {
 
     private lateinit var binding: FragmentRegistrationBinding
-
+    private val viewModel by lazy { RegistrationViewModel() }
     private val args: RegistrationFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -35,7 +35,7 @@ class RegistrationFragment : Fragment() {
             findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToAgreementFragment())
         }
 
-// если есть 1 - чекбокс чекед и кнопка работает
+        // если есть 1 - чекбокс чекед и кнопка работает
         val checkbox = binding.registrationCheckbox
         val button = binding.btnToSmsFragment
         val number = args.number
@@ -51,7 +51,8 @@ class RegistrationFragment : Fragment() {
                 if (code.isNullOrEmpty()) {
                     Toast.makeText(context, "Введите номер телефона", Toast.LENGTH_LONG).show()
                 } else {
-                    findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
+
+                    postNumber()
                 }
 
             }
@@ -72,7 +73,8 @@ class RegistrationFragment : Fragment() {
                     if (code.isNullOrEmpty()) {
                         Toast.makeText(context, "Введите номер телефона", Toast.LENGTH_LONG).show()
                     } else {
-                        findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
+//                        findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
+                        postNumber()
                     }
 
                 }
@@ -82,5 +84,16 @@ class RegistrationFragment : Fragment() {
             }
         }
     }
+
+    private fun postNumber() {
+        val number = Register(null,null,null,null,null,null,binding.registrationPhoneET.text.toString(),null,null)
+        viewModel.postNumber(number) {
+            findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
+        }
+        viewModel.registration.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }
 
