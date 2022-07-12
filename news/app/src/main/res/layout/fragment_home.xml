@@ -208,6 +208,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
+                    android:id="@+id/goToOnlineRegistration"
                     style="@style/ButtonYellow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

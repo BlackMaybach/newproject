@@ -73,30 +73,25 @@
 
     </RelativeLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="350sp"
         android:layout_height="60dp"
-        android:layout_gravity="center">
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/registrationCheckbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/textView3"
             style="@style/MicroText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:text="Я принимаю"
-            android:textColor="@color/anotherGray"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/registrationCheckbox"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="@color/anotherGray" />
 
         <TextView
             android:id="@+id/toAgreementFragment"
@@ -107,10 +102,8 @@
             android:layout_marginEnd="8dp"
             android:text="условия"
             android:textColor="@color/yellow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView2"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:background="@drawable/bottom_line"
+            android:padding="1sp"/>
 
         <TextView
             android:id="@+id/textView2"
@@ -123,7 +116,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="350sp"

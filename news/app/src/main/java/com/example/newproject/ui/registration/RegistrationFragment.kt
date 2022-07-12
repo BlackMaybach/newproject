@@ -40,11 +40,20 @@ class RegistrationFragment : Fragment() {
         val button = binding.btnToSmsFragment
         val number = args.number
 
+
+
         if (number == 1) {
             checkbox.isChecked = true
             button.isEnabled = true
             binding.btnToSmsFragment.setOnClickListener {
-                findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
+
+                val code = binding.registrationPhoneET.text.toString()
+                if (code.isNullOrEmpty()) {
+                    Toast.makeText(context, "Введите номер телефона", Toast.LENGTH_LONG).show()
+                } else {
+                    findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
+                }
+
             }
             // если нет 1 - чекбокс не чекед и кнопка не работает
         } else {
@@ -58,7 +67,14 @@ class RegistrationFragment : Fragment() {
             if (checked) {
                 button.isEnabled = true
                 binding.btnToSmsFragment.setOnClickListener {
-                    findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
+
+                    val code = binding.registrationPhoneET.text.toString()
+                    if (code.isNullOrEmpty()) {
+                        Toast.makeText(context, "Введите номер телефона", Toast.LENGTH_LONG).show()
+                    } else {
+                        findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
+                    }
+
                 }
             } else {
                 button.isEnabled = false
@@ -66,6 +82,5 @@ class RegistrationFragment : Fragment() {
             }
         }
     }
-
 }
 

@@ -55,4 +55,6 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
 
+    implementation 'com.reginald:editspinner:1.1.0'
+
 }

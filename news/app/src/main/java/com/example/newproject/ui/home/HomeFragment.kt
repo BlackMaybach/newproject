@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.newproject.R
 import com.example.newproject.databinding.FragmentHomeBinding
 
@@ -34,6 +35,11 @@ class HomeFragment : Fragment() {
             val i = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.elet.kg"))
             startActivity(i)
         }
+
+        binding.goToOnlineRegistration.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToOnlineRegistrationFragment())
+        }
+
     }
 
 }

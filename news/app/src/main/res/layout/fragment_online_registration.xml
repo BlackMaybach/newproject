@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".ui.online_registration.OnlineRegistrationFragment">
+
+    <include
+        android:id="@+id/toolbar2"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+
+        android:id="@+id/linearLayoutOnline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+
+        <TextView
+            style="@style/NormalBoldTitle"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Адрес фактического проживания " />
+
+        <TextView
+            style="@style/MicroText2"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Укажите свой адрес фактического проживния" />
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MicroText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Область" />
+
+            <com.reginald.editspinner.EditSpinner
+                style="@style/PhoneET"
+                android:id="@+id/edit_spinner_region"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:dropDownDrawable="@drawable/spinner_icon"
+                app:dropDownDrawableHeight="25dp"
+                app:dropDownDrawableSpacing="15dp"
+                app:dropDownDrawableWidth="25dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MicroText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Район" />
+
+            <com.reginald.editspinner.EditSpinner
+                style="@style/PhoneET"
+                android:id="@+id/edit_spinner_district"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:dropDownDrawable="@drawable/spinner_icon"
+                app:dropDownDrawableHeight="25dp"
+                app:dropDownDrawableSpacing="15dp"
+                app:dropDownDrawableWidth="25dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MicroText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Город/Село" />
+
+            <EditText
+                android:id="@+id/cityET"
+                style="@style/PhoneET" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MicroText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Микрорайон/ улица:" />
+
+            <EditText
+                android:id="@+id/streetET"
+                style="@style/PhoneET" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="5dp">
+
+                <TextView
+                    style="@style/MicroText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Дом/корпус:" />
+
+                <EditText
+                    android:id="@+id/houseET"
+                    style="@style/PhoneET"
+                    android:inputType="number" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/MicroText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Квартира/комната:" />
+
+
+                <EditText
+                    android:id="@+id/roomET"
+                    style="@style/PhoneET"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnConfirm"
+        style="@style/ButtonYellow"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10sp"
+        android:layout_marginEnd="10sp"
+        android:text="Подтвердить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutOnline"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

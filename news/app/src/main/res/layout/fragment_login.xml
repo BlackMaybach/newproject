@@ -59,7 +59,7 @@
             android:id="@+id/loginPhoneET"
             style="@style/PhoneET"
             android:layout_below="@+id/tw3"
-            android:hint="+996700702095"/>
+            android:hint="+996700702095" />
 
     </RelativeLayout>
 
