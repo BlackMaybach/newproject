@@ -23,59 +23,13 @@ class CreditsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentCreditsBinding.inflate(inflater, container, false)
-        binding.toolbar1.textViewStart.text = "Новая заявка на кредит"
+        binding.toolbar1.textViewStart.text = "Кредит"
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val arrCanal = listOf("Электронный кошелёк", "Не электронный кошелёк")
-        val arrProvider = listOf("Balance", "O деньги")
 
-        val mEditSpinnerCanal = binding.editSpinnerCanal
-        val adapterCanal = ArrayAdapter(
-            requireContext(), android.R.layout.simple_spinner_dropdown_item,
-            arrCanal
-        )
-        mEditSpinnerCanal.setAdapter(adapterCanal)
-
-        val mEditSpinnerProvider = binding.editSpinnerProvider
-        val adapterProvider = ArrayAdapter(
-            requireContext(), android.R.layout.simple_spinner_dropdown_item,
-            arrProvider
-        )
-        mEditSpinnerProvider.setAdapter(adapterProvider)
-
-
-        val btn = binding.btnConfirm
-
-        btn.setOnClickListener {
-            val radioGroup = binding.radioGroup
-            val sum = binding.creditSum.text.toString()
-            val date = binding.creditDate.text.toString()
-            val canal = binding.editSpinnerCanal.text.toString()
-            val provider = binding.editSpinnerProvider.text.toString()
-            val number = binding.creditNumber.text.toString()
-
-            if (sum.isEmpty()) {
-                Toast.makeText(requireContext(), "Заполните поле сумма", Toast.LENGTH_LONG).show()
-            }
-            else if(date.isEmpty()) {
-                Toast.makeText(requireContext(), "Заполните поле срок кредита", Toast.LENGTH_LONG).show()
-            }
-            else if(canal.isEmpty()) {
-                Toast.makeText(requireContext(), "Заполните поле канал выдачи", Toast.LENGTH_LONG).show()
-            }
-            else if(provider.isEmpty()) {
-                Toast.makeText(requireContext(), "Заполните поле провайдеры", Toast.LENGTH_LONG).show()
-            }
-            else if(number.isEmpty()) {
-                Toast.makeText(requireContext(), "Заполните поле номер", Toast.LENGTH_LONG).show()
-            }
-            else {
-                Toast.makeText(requireContext(), "You have Selected $canal $provider $sum $date $number", Toast.LENGTH_LONG).show()
-            }
-        }
     }
 
 }

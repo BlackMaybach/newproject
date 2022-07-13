@@ -17,20 +17,35 @@ class RegistrationViewModel : ViewModel() {
 
     private val repository = Repository()
 
-    var registration: MutableLiveData<String> = MutableLiveData()
+    var registration: MutableLiveData<Resource<String>> = MutableLiveData()
 
-    fun postNumber(number: Register, action: () -> Unit) {
+//    fun postNumber(number: Register, action: () -> Unit) {
+//        viewModelScope.launch(Dispatchers.IO) {
+//            repository.sendNumber(number).let {
+//                if (it.code() == 200) {
+//                    registration.postValue(it.body())
+//                    action.invoke()
+//                } else {
+//                    registration.postValue(it.errorBody()?.string())
+//                }
+//            }
+//        }
+//    }
+
+    fun getNumberFragment(number: Register) {
+        registration.postValue(Resource.loading(null))
+
         viewModelScope.launch(Dispatchers.IO) {
+            //отправялем полученный номер в repository
             repository.sendNumber(number).let {
-                if (it.code() == 200) {
-                    registration.postValue(it.body())
-                    action.invoke()
+                // code 200
+                if (it.isSuccessful) {
+                    registration.postValue(Resource.success(it.body()))
                 } else {
-                    registration.postValue(it.errorBody()?.string())
+                    registration.postValue(Resource.error("${it.errorBody()?.string()}", null))
                 }
             }
+
         }
     }
-
-
 }

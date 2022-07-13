@@ -10,12 +10,16 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.newproject.databinding.FragmentRegistrationBinding
 import com.example.newproject.ui.api.models.Register
+import com.example.newproject.utils.Status
+import com.example.newproject.utils.showToast
 
 class RegistrationFragment : Fragment() {
 
     private lateinit var binding: FragmentRegistrationBinding
     private val viewModel by lazy { RegistrationViewModel() }
     private val args: RegistrationFragmentArgs by navArgs()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,23 +42,24 @@ class RegistrationFragment : Fragment() {
         // если есть 1 - чекбокс чекед и кнопка работает
         val checkbox = binding.registrationCheckbox
         val button = binding.btnToSmsFragment
-        val number = args.number
-
+        val mMaxLength = 12
+        var number = args.number
 
 
         if (number == 1) {
             checkbox.isChecked = true
             button.isEnabled = true
+
             binding.btnToSmsFragment.setOnClickListener {
 
                 val code = binding.registrationPhoneET.text.toString()
                 if (code.isNullOrEmpty()) {
                     Toast.makeText(context, "Введите номер телефона", Toast.LENGTH_LONG).show()
+                } else if (code.length > mMaxLength) {
+                    Toast.makeText(context, "Номер не должен превышать 12 знаков", Toast.LENGTH_LONG).show()
                 } else {
-
                     postNumber()
                 }
-
             }
             // если нет 1 - чекбокс не чекед и кнопка не работает
         } else {
@@ -72,6 +77,8 @@ class RegistrationFragment : Fragment() {
                     val code = binding.registrationPhoneET.text.toString()
                     if (code.isNullOrEmpty()) {
                         Toast.makeText(context, "Введите номер телефона", Toast.LENGTH_LONG).show()
+                    } else if (code.length > mMaxLength) {
+                        Toast.makeText(context, "Номер не должен превышать 12 знаков", Toast.LENGTH_LONG).show()
                     } else {
 //                        findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
                         postNumber()
@@ -83,16 +90,46 @@ class RegistrationFragment : Fragment() {
                 Toast.makeText(context, "Button is invisible", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 
     private fun postNumber() {
-        val number = Register(null,null,null,null,null,null,binding.registrationPhoneET.text.toString(),null,null)
-        viewModel.postNumber(number) {
-            findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
-        }
+        val number = Register(
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            binding.registrationPhoneET.text.toString(),
+            null,
+            null
+        )
+
+        // отправляем номер во RegistrationViewModel
+        viewModel.getNumberFragment(number)
+
         viewModel.registration.observe(viewLifecycleOwner) {
-            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            when (it.status) {
+                Status.LOADING -> {
+                    binding.btnToSmsFragment.isEnabled = false
+                }
+                Status.SUCCESS -> {
+                    binding.btnToSmsFragment.isEnabled = true
+                    val numberArg = binding.registrationPhoneET.text.toString()
+                    findNavController().navigate(
+                        RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment(
+                            numberArg
+                        )
+                    )
+                }
+                Status.ERROR -> {
+                    requireContext().showToast(it.message)
+                    binding.btnToSmsFragment.isEnabled = true
+                }
+            }
         }
+
     }
 
 }

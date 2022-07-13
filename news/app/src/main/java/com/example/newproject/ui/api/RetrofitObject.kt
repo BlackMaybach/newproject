@@ -1,18 +1,23 @@
 package com.example.newproject.ui.api
 
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.security.cert.CertificateException
 import java.util.concurrent.TimeUnit
 import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
+
 object RetrofitObject {
     var retrofit: Retrofit? = null
-
+    var gson = GsonBuilder()
+        .setLenient()
+        .create()
     fun getClient(): Retrofit {
 
         if (retrofit == null) {
@@ -22,7 +27,8 @@ object RetrofitObject {
                 .addInterceptor(logging).build()
             retrofit = Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create()) // заполнение через json
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson)) // заполнение через json
                 .client(client)
                 .build()
         }
@@ -49,7 +55,7 @@ object RetrofitObject {
 //
 //    }
 
-    fun getUnsafeOkHttpClient(): OkHttpClient.Builder {
+    private fun getUnsafeOkHttpClient(): OkHttpClient.Builder {
         try {
             // Create a trust manager that does not validate certificate chains
             val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
