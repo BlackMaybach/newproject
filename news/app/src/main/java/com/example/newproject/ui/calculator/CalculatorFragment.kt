@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.example.newproject.R
 import com.example.newproject.databinding.FragmentCalculatorBinding
+import com.example.newproject.utils.gone
 
 
 class CalculatorFragment : Fragment() {
@@ -21,6 +22,7 @@ class CalculatorFragment : Fragment() {
     ): View? {
         binding = FragmentCalculatorBinding.inflate(inflater,container,false)
         binding.toolbar1.textViewStart.text = "Кредитный калькулятор"
+        binding.toolbar1.toolbarExitButton.gone()
         return binding.root
     }
 

@@ -1,14 +1,12 @@
 package com.example.newproject.ui.registration
 
 
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.newproject.repository.Repository
-import com.example.newproject.ui.api.models.Register
+import com.example.newproject.ui.api.models.AccountRegister
 import com.example.newproject.utils.Resource
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -32,7 +30,7 @@ class RegistrationViewModel : ViewModel() {
 //        }
 //    }
 
-    fun getNumberFragment(number: Register) {
+    fun getNumberFragment(number: AccountRegister) {
         registration.postValue(Resource.loading(null))
 
         viewModelScope.launch(Dispatchers.IO) {

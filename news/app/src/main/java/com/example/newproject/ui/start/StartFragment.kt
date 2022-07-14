@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isGone
 import androidx.navigation.fragment.findNavController
 import com.example.newproject.databinding.FragmentStartBinding
+import com.example.newproject.utils.gone
 
 
 class StartFragment : Fragment() {
@@ -20,7 +22,7 @@ class StartFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentStartBinding.inflate(inflater,container,false)
-
+        binding.toolbar1.toolbarExitButton.gone()
         return binding.root
     }
 

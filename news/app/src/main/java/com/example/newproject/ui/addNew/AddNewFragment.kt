@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.example.newproject.R
 import com.example.newproject.databinding.FragmentAddNewBinding
 import com.example.newproject.databinding.FragmentCreditsBinding
+import com.example.newproject.utils.gone
 
 
 class AddNewFragment : Fragment() {
@@ -22,6 +23,7 @@ private lateinit var binding : FragmentAddNewBinding
     ): View? {
         binding = FragmentAddNewBinding.inflate(inflater, container, false)
         binding.toolbar1.textViewStart.text = "Новая заявка на кредит"
+        binding.toolbar1.toolbarExitButton.gone()
         return binding.root
     }
 

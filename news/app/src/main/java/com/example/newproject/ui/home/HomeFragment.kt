@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.newproject.R
 import com.example.newproject.databinding.FragmentHomeBinding
+import com.example.newproject.utils.gone
 
 
 class HomeFragment : Fragment() {
@@ -21,6 +22,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater,container,false)
+        binding.toolbar1.toolbarExitButton.gone()
         return binding.root
     }
 

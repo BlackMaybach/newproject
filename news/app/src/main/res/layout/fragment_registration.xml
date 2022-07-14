@@ -73,12 +73,14 @@
             android:layout_height="wrap_content"
             android:text="Номер телефона" />
 
+
         <EditText
             android:id="@+id/registrationPhoneET"
             style="@style/PhoneET"
-            android:layout_below="@+id/tw3"
-            android:hint="+996700702095"
-            android:inputType="number"></EditText>
+            android:inputType="number"
+            android:layout_below="@+id/tw3" />
+
+
 
     </RelativeLayout>
 

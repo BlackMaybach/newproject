@@ -6,10 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.newproject.databinding.FragmentRegistrationBinding
-import com.example.newproject.ui.api.models.Register
+import com.example.newproject.ui.api.models.AccountRegister
 import com.example.newproject.utils.Status
 import com.example.newproject.utils.showToast
 
@@ -18,7 +19,6 @@ class RegistrationFragment : Fragment() {
     private lateinit var binding: FragmentRegistrationBinding
     private val viewModel by lazy { RegistrationViewModel() }
     private val args: RegistrationFragmentArgs by navArgs()
-
 
 
     override fun onCreateView(
@@ -90,11 +90,11 @@ class RegistrationFragment : Fragment() {
                 Toast.makeText(context, "Button is invisible", Toast.LENGTH_SHORT).show()
             }
         }
-
     }
 
+
     private fun postNumber() {
-        val number = Register(
+        val number = AccountRegister(
             null,
             null,
             null,
@@ -116,7 +116,7 @@ class RegistrationFragment : Fragment() {
                 }
                 Status.SUCCESS -> {
                     binding.btnToSmsFragment.isEnabled = true
-                    val numberArg = binding.registrationPhoneET.text.toString()
+                    val numberArg = "0" + binding.registrationPhoneET.text.toString()
                     findNavController().navigate(
                         RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment(
                             numberArg

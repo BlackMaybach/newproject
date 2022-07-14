@@ -1,26 +1,27 @@
 package com.example.newproject.ui.api
 
-import com.example.newproject.repository.Repository
-import com.example.newproject.ui.api.models.Otp
-import com.example.newproject.ui.api.models.Register
-import okhttp3.RequestBody
-import okhttp3.ResponseBody
-import retrofit2.Call
+import com.example.newproject.ui.api.models.AccountLogin
+import com.example.newproject.ui.api.models.AccountPassword
+import com.example.newproject.ui.api.models.AccountRegister
+import com.example.newproject.ui.api.models.LoginResponse
 import retrofit2.Response
 import retrofit2.http.*
 
 
 interface Api {
-
+    // отправка номера регистрация
     @POST("Account/Register")
-    suspend fun registerNumber(@Body phoneNumber: Register): Response<String>
+    suspend fun registerNumber(@Body phoneNumber: AccountRegister): Response<String>
 
-    @GET("/Loan/SendOtp")
-    suspend fun otpCode(
-        @Query("loanRequestId") loanRequestId: Int,
-        @Query("code") code: String
-    ) : Response<Otp>
+    // отправка номера и кода(смс)
+    @POST("/Account/Login")
+    suspend fun otpCode(@Body accountLogin : AccountLogin) : Response<LoginResponse>
 
+    // отправка пароля
+    @POST("/Account/ChangePassword")
+    suspend fun password(@Body accountPassword: AccountPassword) : Response<String>
+
+    //соглашение
     @GET("/Account/GetAgreement")
     suspend fun getAgreementText() : Response<String>
 

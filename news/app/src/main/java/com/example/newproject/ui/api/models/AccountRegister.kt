@@ -1,6 +1,6 @@
 package com.example.newproject.ui.api.models
 
-data class Register(
+data class AccountRegister(
     val inn : String?,
     val name : String?,
     val surname : String?,

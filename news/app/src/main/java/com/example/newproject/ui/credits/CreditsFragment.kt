@@ -11,6 +11,7 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import com.example.newproject.R
 import com.example.newproject.databinding.FragmentCreditsBinding
+import com.example.newproject.utils.gone
 
 
 class CreditsFragment : Fragment() {
@@ -24,6 +25,7 @@ class CreditsFragment : Fragment() {
     ): View? {
         binding = FragmentCreditsBinding.inflate(inflater, container, false)
         binding.toolbar1.textViewStart.text = "Кредит"
+        binding.toolbar1.toolbarExitButton.gone()
         return binding.root
     }
 

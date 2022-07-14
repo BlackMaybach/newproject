@@ -15,4 +15,6 @@
     <color name="anotherWhite">#F7F7F7</color>
     <color name="homeStep">#F2F2F2</color>
     <color name="navigation">#5C5C5C</color>
+    <color name="backgroundGray">#F8F8F8</color>
+    <color name="green">#2F9C2C</color>
 </resources>
