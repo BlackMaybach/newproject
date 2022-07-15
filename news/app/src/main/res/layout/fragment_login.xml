@@ -56,6 +56,7 @@
             android:text="Номер телефона" />
 
         <EditText
+            android:inputType="number"
             android:id="@+id/loginPhoneET"
             style="@style/PhoneET"
             android:layout_below="@+id/tw3"
@@ -80,7 +81,7 @@
             style="@style/PhoneET"
             android:layout_below="@+id/tw4"
             android:hint="Введите пароль"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword" />
 
     </RelativeLayout>
 

@@ -7,22 +7,33 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isGone
 import androidx.navigation.fragment.findNavController
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
+import com.example.newproject.R
 import com.example.newproject.databinding.FragmentStartBinding
 import com.example.newproject.utils.gone
 
 
 class StartFragment : Fragment() {
 
+
     private lateinit var binding: FragmentStartBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentStartBinding.inflate(inflater,container,false)
+
         binding.toolbar1.toolbarExitButton.gone()
+        val imageSlider = binding.imageSlider
+        val imageList = ArrayList<SlideModel>()
+        imageList.add(SlideModel(R.drawable.one))
+        imageList.add(SlideModel(R.drawable.two))
+        imageSlider.setImageList(imageList, ScaleTypes.FIT)
+        imageSlider.stopSliding()
         return binding.root
     }
 
@@ -34,13 +45,18 @@ class StartFragment : Fragment() {
         }
 
         binding.regFragment.setOnClickListener {
-            findNavController().navigate(StartFragmentDirections.actionStartFragmentToRegistrationFragment(0))
+            findNavController().navigate(
+                StartFragmentDirections.actionStartFragmentToRegistrationFragment(
+                    0
+                )
+            )
         }
 
         binding.link.setOnClickListener {
             val i = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.elet.kg"))
             startActivity(i)
         }
-    }
 
+
+    }
 }

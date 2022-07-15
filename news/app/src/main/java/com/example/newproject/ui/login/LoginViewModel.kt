@@ -1,5 +1,4 @@
-package com.example.newproject.ui.registration
-
+package com.example.newproject.ui.login
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,25 +12,28 @@ import com.example.newproject.utils.SharedPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SmsViewModel: ViewModel() {
+class LoginViewModel : ViewModel() {
 
     private val repository = Repository()
-    var smsCode: MutableLiveData<Resource<LoginResponse>> = MutableLiveData()
-    private val shared_pref = SharedPreference(App.instance.applicationContext)
-
-    fun getSmsCodeFragment(account: AccountLogin) {
-        smsCode.postValue(Resource.loading(null))
+    var loginData : MutableLiveData<Resource<LoginResponse>?> = MutableLiveData()
+    val shared_pref = SharedPreference(App.instance.applicationContext)
+    fun getLogin(login: AccountLogin) {
+        loginData.postValue(Resource.loading(null))
         viewModelScope.launch(Dispatchers.IO) {
-            repository.sendSms(account).let {
+            repository.sendLogin(login).let {
                 // code 200
-                if(it.isSuccessful) {
-                    smsCode.postValue(Resource.success(it.body()))
+                if(it.isSuccessful && it.code() == 200) {
+                    loginData.postValue(Resource.success(it.body()))
                     shared_pref.userToken = it.body()?.accessToken
                 } else {
-                    smsCode.postValue(Resource.error("${it.errorBody()?.string()}", null))
+                    loginData.postValue(Resource.error("${it.errorBody()?.string()}", null))
                 }
             }
         }
+    }
+
+    fun clear() {
+        loginData.postValue(null)
     }
 
 }

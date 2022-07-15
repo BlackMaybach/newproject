@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.example.newproject.R
 import com.example.newproject.databinding.FragmentHomeBinding
 import com.example.newproject.utils.gone
@@ -23,6 +25,13 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater,container,false)
         binding.toolbar1.toolbarExitButton.gone()
+        binding.toolbar1.toolbarExitButton.gone()
+        val imageSlider = binding.imageSlider
+        val imageList = ArrayList<SlideModel>()
+        imageList.add(SlideModel(R.drawable.one))
+        imageList.add(SlideModel(R.drawable.two))
+        imageSlider.setImageList(imageList, ScaleTypes.FIT)
+        imageSlider.stopSliding()
         return binding.root
     }
 

@@ -42,7 +42,7 @@ class RegistrationFragment : Fragment() {
         // если есть 1 - чекбокс чекед и кнопка работает
         val checkbox = binding.registrationCheckbox
         val button = binding.btnToSmsFragment
-        val mMaxLength = 12
+        val mMaxLength = 9
         var number = args.number
 
 
@@ -57,6 +57,8 @@ class RegistrationFragment : Fragment() {
                     Toast.makeText(context, "Введите номер телефона", Toast.LENGTH_LONG).show()
                 } else if (code.length > mMaxLength) {
                     Toast.makeText(context, "Номер не должен превышать 12 знаков", Toast.LENGTH_LONG).show()
+                } else if (code.length < mMaxLength) {
+                    Toast.makeText(context, "Номер должен остоять из 9 цифр", Toast.LENGTH_LONG).show()
                 } else {
                     postNumber()
                 }
@@ -78,8 +80,11 @@ class RegistrationFragment : Fragment() {
                     if (code.isNullOrEmpty()) {
                         Toast.makeText(context, "Введите номер телефона", Toast.LENGTH_LONG).show()
                     } else if (code.length > mMaxLength) {
-                        Toast.makeText(context, "Номер не должен превышать 12 знаков", Toast.LENGTH_LONG).show()
-                    } else {
+                        Toast.makeText(context, "Номер не должен превышать 9 цифр", Toast.LENGTH_LONG).show()
+                    } else if (code.length < mMaxLength) {
+                        Toast.makeText(context, "Номер должен остоять из 9 цифр", Toast.LENGTH_LONG).show()
+                    }
+                    else {
 //                        findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToSmsFragment())
                         postNumber()
                     }
@@ -124,8 +129,9 @@ class RegistrationFragment : Fragment() {
                     )
                 }
                 Status.ERROR -> {
-                    requireContext().showToast(it.message)
                     binding.btnToSmsFragment.isEnabled = true
+                    requireContext().showToast(it.message)
+
                 }
             }
         }

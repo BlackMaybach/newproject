@@ -22,11 +22,20 @@
             android:layout_height="100dp"
             android:orientation="vertical">
 
-            <ImageView
+            <com.denzcoskun.imageslider.ImageSlider
+                android:padding="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginTop="15sp"
-                android:src="@drawable/settings" />
+                android:layout_height="210dp"
+                android:id="@+id/imageSlider"
+                app:iss_auto_cycle="true"
+                app:iss_delay="0"
+                app:iss_placeholder="@android:color/darker_gray"
+                app:iss_error_image="@android:color/darker_gray"
+                app:iss_corner_radius="25"
+                app:iss_selected_dot="@drawable/carousel_dots"
+                app:iss_unselected_dot="@drawable/default_unselected_dot"
+                app:iss_period="1000"
+                tools:ignore="MissingConstraints" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

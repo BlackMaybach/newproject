@@ -1,5 +1,7 @@
 package com.example.newproject.ui.api
 
+import com.example.newproject.App
+import com.example.newproject.utils.SharedPreference
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,28 +16,32 @@ import javax.net.ssl.X509TrustManager
 
 
 object RetrofitObject {
-    var retrofit: Retrofit? = null
     var gson = GsonBuilder()
         .setLenient()
         .create()
-    fun getClient(): Retrofit {
 
-        if (retrofit == null) {
-            val logging = HttpLoggingInterceptor()
-            logging.level = HttpLoggingInterceptor.Level.BODY
-            val client = getUnsafeOkHttpClient()
-                .addInterceptor(logging).build()
-            retrofit = Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(ScalarsConverterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create(gson)) // заполнение через json
-                .client(client)
-                .build()
+    var authToken = SharedPreference(App.instance.applicationContext).userToken
+    private val retrofit by lazy {
+        val logging = HttpLoggingInterceptor()
+        logging.level = HttpLoggingInterceptor.Level.BODY
+        var client = getUnsafeOkHttpClient().addInterceptor { chain ->
+            chain.proceed(chain.request().newBuilder().also {
+                if (authToken != null) {
+                    it.addHeader("Authorization", "Bearer $authToken").build()
+                }
+            }.build())
         }
+            .addInterceptor(logging)
+            .build()
 
-        return retrofit!! // !! - уверены что не null
-
+        Retrofit.Builder()
+            .baseUrl(Constants.BASE_URL)
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson)) // заполнение через json
+            .client(client)
+            .build()
     }
+
 
 //    private var logHangler: ((String) -> (Unit))? = null
 //
@@ -92,5 +98,9 @@ object RetrofitObject {
         } catch (e: Exception) {
             throw RuntimeException(e)
         }
+    }
+
+    val api by lazy {
+        retrofit.create(Api::class.java)
     }
 }

@@ -71,7 +71,7 @@ class PasswordFragment : Fragment() {
                 }
                 Status.SUCCESS -> {
                     binding.btnSavePassword.isEnabled = true
-                    findNavController().navigate(PasswordFragmentDirections.actionPasswordFragmentToHomeFragment())
+                    findNavController().navigate(PasswordFragmentDirections.actionPasswordFragmentToStartFragment())
                 }
 
                 Status.ERROR -> {

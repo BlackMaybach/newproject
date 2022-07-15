@@ -77,8 +77,9 @@
         <EditText
             android:id="@+id/registrationPhoneET"
             style="@style/PhoneET"
-            android:inputType="number"
-            android:layout_below="@+id/tw3" />
+            android:maxLength="9"
+            android:layout_below="@+id/tw3"
+            android:inputType="number" />
 
 
 

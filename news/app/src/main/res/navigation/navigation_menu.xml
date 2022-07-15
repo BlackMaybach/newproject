@@ -104,8 +104,8 @@
             android:name="code"
             app:argType="integer" />
         <action
-            android:id="@+id/action_passwordFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_passwordFragment_to_startFragment"
+            app:destination="@id/startFragment"
             app:popUpTo="@id/startFragment"
             app:popUpToInclusive="true" />
     </fragment>
