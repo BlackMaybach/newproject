@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".ui.profile.ProfileFormFragment">
+
+    <include
+        android:id="@+id/toolbar2"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/MicroText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bottom_line_gray"
+                android:padding="5sp"
+                android:text="персональные данные"
+                android:textAllCaps="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10sp">
+
+                <TextView
+                    style="@style/MicroText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Фамилия" />
+
+                <TextView
+                    android:id="@+id/lastName"
+                    style="@style/ProfileForm"
+                    android:background="@drawable/round_corner_tw"
+                    android:text="Фамилия" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10sp">
+
+                <TextView
+                    style="@style/MicroText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Имя" />
+
+                <TextView
+                    android:id="@+id/firstName"
+                    style="@style/ProfileForm"
+                    android:background="@drawable/round_corner_tw"
+                    android:text="Имя" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10sp">
+
+                <TextView
+                    style="@style/MicroText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Отчество" />
+
+                <TextView
+                    android:id="@+id/middleName"
+                    style="@style/ProfileForm"
+                    android:background="@drawable/round_corner_tw"
+                    android:text="Отчество" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10sp">
+
+                <TextView
+                    style="@style/MicroText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Тип документа" />
+
+                <TextView
+                    android:id="@+id/documentTypeId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corner_tw"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10sp">
+
+                <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp">
+
+                    <TextView
+                        style="@style/MicroText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ИНН" />
+
+                    <TextView
+                        android:id="@+id/identificationNumber"
+                        style="@style/ProfileForm"
+                        android:background="@drawable/round_corner_tw"
+                        android:text="ИНН" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="10dp">
+
+                    <TextView
+                        style="@style/MicroText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Номер" />
+
+                    <TextView
+                        android:id="@+id/contactPhone"
+                        style="@style/ProfileForm"
+                        android:background="@drawable/round_corner_tw"
+                        android:text="Номер" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10sp">
+
+                <TextView
+                    style="@style/MicroText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Серия документа" />
+
+                <TextView
+                    android:id="@+id/documentSeries"
+                    style="@style/ProfileForm"
+                    android:background="@drawable/round_corner_tw"
+                    android:text="Серия" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10sp">
+
+                <TextView
+                    style="@style/MicroText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Кем выдан" />
+
+                <TextView
+                    android:id="@+id/issueAuthority"
+                    style="@style/ProfileForm"
+                    android:background="@drawable/round_corner_tw"
+                    android:text="Кем выдан" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

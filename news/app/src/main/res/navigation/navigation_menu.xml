@@ -33,7 +33,11 @@
         android:id="@+id/profileFragment"
         android:name="com.example.newproject.ui.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_profileFormFragment"
+            app:destination="@id/profileFormFragment" />
+    </fragment>
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.newproject.ui.start.StartFragment"
@@ -114,4 +118,9 @@
         android:name="com.example.newproject.ui.online_registration.OnlineRegistrationFragment"
         android:label="fragment_online_registration"
         tools:layout="@layout/fragment_online_registration" />
+    <fragment
+        android:id="@+id/profileFormFragment"
+        android:name="com.example.newproject.ui.profile.ProfileFormFragment"
+        android:label="fragment_profile_form"
+        tools:layout="@layout/fragment_profile_form" />
 </navigation>

@@ -6,6 +6,7 @@ import com.example.newproject.ui.api.models.AccountLogin
 import com.example.newproject.ui.api.models.AccountPassword
 import com.example.newproject.ui.api.models.AccountRegister
 import com.example.newproject.ui.api.models.LoginResponse
+import com.example.newproject.ui.api.models.UserInfo.userInfo
 import com.example.newproject.ui.api.models.references.getReferences
 import retrofit2.Response
 
@@ -31,6 +32,10 @@ class Repository {
 
     suspend fun takeReferences() : Response<getReferences> {
         return api.getReferencesApi()
+    }
+
+    suspend fun takeUserInfo() : Response<userInfo> {
+        return api.getUserInfo()
     }
 
 
