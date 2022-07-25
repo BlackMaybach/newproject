@@ -1,6 +1,7 @@
 package com.example.newproject.ui.login
 
 import android.os.Bundle
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -39,23 +40,27 @@ class LoginFragment : Fragment() {
 
         var maxNumber = 9
 
+        val phone = "0505945500"
+        val password = "12qw!@QW"
+        binding.loginPhoneET.text = Editable.Factory.getInstance().newEditable(phone)
+        binding.loginPasswordET.text = Editable.Factory.getInstance().newEditable(password)
+
+
         binding.toHomeFragment.setOnClickListener {
 
 
-        val numberLogin = binding.loginPhoneET.text.toString()
-        val passwordLogin = binding.loginPasswordET.text.toString()
-        if (numberLogin.isNullOrEmpty()) {
-            Toast.makeText(context, "Введите номер", Toast.LENGTH_LONG).show()
-        } else if (numberLogin.length < maxNumber) {
-            Toast.makeText(context, "Номер должен остоять из 9 цифр", Toast.LENGTH_LONG).show()
-        }
-         else if(passwordLogin.isNullOrEmpty()) {
-            Toast.makeText(context, "Введите пароль", Toast.LENGTH_LONG).show()
-         }
-        else {
-            getLogin()
-            viewModel.clear()
-        }
+            val numberLogin = binding.loginPhoneET.text.toString()
+            val passwordLogin = binding.loginPasswordET.text.toString()
+            if (numberLogin.isNullOrEmpty()) {
+                Toast.makeText(context, "Введите номер", Toast.LENGTH_LONG).show()
+            } else if (numberLogin.length < maxNumber) {
+                Toast.makeText(context, "Номер должен остоять из 9 цифр", Toast.LENGTH_LONG).show()
+            } else if (passwordLogin.isNullOrEmpty()) {
+                Toast.makeText(context, "Введите пароль", Toast.LENGTH_LONG).show()
+            } else {
+                getLogin()
+                viewModel.clear()
+            }
         }
     }
 

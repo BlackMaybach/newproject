@@ -1,5 +1,6 @@
 package com.example.newproject.ui.profile
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,7 +22,7 @@ class ProfileFormFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentProfileFormBinding.inflate(inflater,container,false)
+        binding = FragmentProfileFormBinding.inflate(inflater, container, false)
         binding.toolbar2.textToolbar.text = "Анкета"
         binding.toolbar2.backButton.setOnClickListener {
             activity?.onBackPressed()
@@ -29,21 +30,36 @@ class ProfileFormFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getInfoUser()
 
         viewModel.infoFormUser.observe(viewLifecycleOwner) {
-            when(it.status) {
+            when (it.status) {
 
                 Status.SUCCESS -> {
                     binding.firstName.text = it.data?.firstName
                     binding.lastName.text = it.data?.lastName
                     binding.middleName.text = it.data?.middleName
-                    binding.contactPhone.text = it.data?.contactPhone
+                    binding.contactPhone.text = "0" + it.data?.contactPhone
                     binding.identificationNumber.text = it.data?.identificationNumber
-                    binding.documentSeries.text = it.data?.documentSeries
-                    binding.issueAuthority.text = it.data?.issueAuthority
+
+                    val documentSeries = it.data?.documentSeries!!
+                    binding.documentSeries.text = documentSeries
+
+                    binding.issueAuthority.text = it.data.issueAuthority
+                    binding.registrationCityName.text = it.data.registrationCityName
+                    binding.registrationStreet.text = it.data.registrationStreet
+                    binding.registrationHouse.text = it.data.registrationHouse
+                    binding.registrationFlat.text = it.data.registrationFlat
+
+                    binding.registrationCityNameFact.text = it.data.registrationCityName
+                    binding.registrationStreetFact.text = it.data.residenceStreet
+                    binding.registrationHouseFact.text = it.data.residenceHouse
+                    binding.registrationFlatFact.text = it.data.residenceFlat
+
+                    getTypeDocument(documentSeries)
                 }
 
                 Status.ERROR -> {
@@ -53,5 +69,14 @@ class ProfileFormFragment : Fragment() {
         }
 
     }
+
+    private fun getTypeDocument(documentSeries: String) {
+        if (documentSeries == "ID") {
+            binding.documentTypeId.text = "Паспорт гражданина Кыргызской Республики образца 2017 года"
+        } else {
+            binding.documentTypeId.text = "Паспорт гражданина Кыргызской Республики образца ниже 2017 года"
+        }
+    }
+
 
 }

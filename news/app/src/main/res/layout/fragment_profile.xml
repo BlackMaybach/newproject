@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -98,10 +99,11 @@
 
                 </LinearLayout>
 
+
                 <LinearLayout
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/round_corner_gray"
                     android:orientation="vertical"
                     android:padding="10dp">
@@ -116,36 +118,310 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Статус "
-                            android:textStyle="bold"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/userStatus"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Идентифицирован"
-                            android:textColor="@color/green"/>
+                            android:hint="идентифицирован"
+                            android:textColor="@color/green" />
 
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/userText"
+                        android:id="@+id/creditStatus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Вы можете подать заявку на кредит" />
+                        android:text="Вы можете получить кредит" />
 
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/btnToForm"
-                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/yellow"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/bottom_line_white_back"
+                    android:padding="1dp"
                     android:text="Посмотреть личные данные в анкете"
-                    android:padding="1dp"/>
+                    android:textColor="@color/yellow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+            
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Настройки профиля"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/round_corner"
+                        android:scaleType="center"
+                        android:src="@drawable/photo"
+                        app:tint="@color/yellow" />
+
+                    <TextView
+                        style="@style/NormalTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Фото профиля"
+                        android:textAlignment="textStart"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/round_corner"
+                        android:scaleType="center"
+                        android:src="@drawable/time"
+                        app:tint="@color/yellow" />
+
+                    <TextView
+                        style="@style/NormalTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Фото профиля"
+                        android:textAlignment="textStart"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/round_corner"
+                        android:scaleType="center"
+                        android:src="@drawable/key"
+                        app:tint="@color/yellow" />
+
+                    <TextView
+                        style="@style/NormalTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Смена пароля"
+                        android:textAlignment="textStart"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/round_corner"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_baseline_exit_to_app_24"
+                        app:tint="@color/yellow" />
+
+                    <TextView
+                        style="@style/NormalTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Выйти из учетной записи"
+                        android:textAlignment="textStart"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Настройки приложения"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/round_corner"
+                        android:scaleType="center"
+                        android:src="@drawable/sound"
+                        app:tint="@color/yellow" />
+
+                    <TextView
+                        style="@style/NormalTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Звук уведомления"
+                        android:textAlignment="textStart"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/round_corner"
+                        android:scaleType="center"
+                        android:src="@drawable/night"
+                        app:tint="@color/yellow" />
+
+                    <TextView
+                        style="@style/NormalTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Темная тема приложения"
+                        android:textAlignment="textStart"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/round_corner"
+                        android:scaleType="center"
+                        android:src="@drawable/security"
+                        app:tint="@color/yellow" />
+
+                    <TextView
+                        style="@style/NormalTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Документы конфиденциальности"
+                        android:textAlignment="textStart"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/round_corner"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_baseline_exit_to_app_24"
+                        app:tint="@color/yellow" />
+
+                    <TextView
+                        style="@style/NormalTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Контакты и обратная связь"
+                        android:textAlignment="textStart"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 

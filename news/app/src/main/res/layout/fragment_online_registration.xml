@@ -50,7 +50,7 @@
                 android:text="Область" />
 
             <com.reginald.editspinner.EditSpinner
-                style="@style/PhoneET"
+                style="@style/spinner"
                 android:id="@+id/edit_spinner_region"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
                 android:text="Район" />
 
             <com.reginald.editspinner.EditSpinner
-                style="@style/PhoneET"
+                style="@style/spinner"
                 android:id="@+id/edit_spinner_district"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,7 +96,7 @@
                 android:text="Город/Село" />
 
             <com.reginald.editspinner.EditSpinner
-                style="@style/PhoneET"
+                style="@style/spinner"
                 android:id="@+id/edit_spinner_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
 
             <EditText
                 android:id="@+id/streetET"
-                style="@style/PhoneET" />
+                style="@style/spinner" />
         </LinearLayout>
 
         <LinearLayout
@@ -143,7 +143,7 @@
 
                 <EditText
                     android:id="@+id/houseET"
-                    style="@style/PhoneET"
+                    style="@style/spinner"
                     android:inputType="number" />
             </LinearLayout>
 
@@ -164,7 +164,7 @@
 
                 <EditText
                     android:id="@+id/roomET"
-                    style="@style/PhoneET"/>
+                    style="@style/spinner"/>
             </LinearLayout>
         </LinearLayout>
 

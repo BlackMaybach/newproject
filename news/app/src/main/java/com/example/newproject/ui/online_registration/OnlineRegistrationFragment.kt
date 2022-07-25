@@ -11,6 +11,7 @@ import android.widget.ListAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.newproject.databinding.FragmentOnlineRegistrationBinding
+import com.example.newproject.ui.api.models.references.Region
 import com.example.newproject.ui.registration.SmsViewModel
 import com.example.newproject.utils.Status
 import com.example.newproject.utils.showToast
@@ -47,9 +48,15 @@ class OnlineRegistrationFragment : Fragment() {
         viewModel.references.observe(viewLifecycleOwner) {
             when (it.status) {
                 Status.SUCCESS -> {
-                    val arrRegion: ArrayList<String> = ArrayList()
-                    it.data?.regions?.get(0)?.let { it1 -> arrRegion.add(it1.name) }
 
+
+
+                    val arrRegion: ArrayList<String> = ArrayList()
+//                    it.data?.regions?.get(0)?.let { it1 -> arrDistrict.add(it1.name) }
+                    val regions = it.data?.regions!!
+                    for(regions in regions) {
+                        arrRegion.add(regions.name)
+                    }
                     val mEditSpinnerRegion = binding.editSpinnerRegion
                     val adapterRegion = ArrayAdapter(
                         requireContext(), android.R.layout.simple_spinner_dropdown_item,
@@ -57,8 +64,15 @@ class OnlineRegistrationFragment : Fragment() {
                     )
                     mEditSpinnerRegion.setAdapter(adapterRegion)
 
+
                     val arrDistrict: ArrayList<String> = ArrayList()
-                    it.data?.areas?.get(0)?.let { it1 -> arrDistrict.add(it1.name) }
+//                    it.data?.areas?.get(0)?.let { it1 -> arrDistrict.add(it1.name) }
+                    val areas = it.data?.areas!!
+
+
+                    for(areas in areas) {
+                        arrDistrict.add(areas.name)
+                    }
 
                     val mEditSpinnerDistrict = binding.editSpinnerDistrict
                     val adapterDistrict = ArrayAdapter(
@@ -68,7 +82,11 @@ class OnlineRegistrationFragment : Fragment() {
                     mEditSpinnerDistrict.setAdapter(adapterDistrict)
 
                     val arrCity: ArrayList<String> = ArrayList()
-                    it.data?.cities?.get(0)?.let { it1 -> arrCity.add(it1.cityName) }
+//                    it.data?.cities?.get(0)?.let { it1 -> arrCity.add(it1.cityName) }
+                    val cities = it.data?.cities!!
+                    for(cities in cities) {
+                        arrCity.add(cities.cityName)
+                    }
 
                     val mEditSpinnerCity = binding.editSpinnerCity
                     val adapterCity = ArrayAdapter(
@@ -77,6 +95,10 @@ class OnlineRegistrationFragment : Fragment() {
                     )
                     mEditSpinnerCity.setAdapter(adapterCity)
 
+
+
+
+                    
                 }
                 Status.ERROR -> {
                     requireContext().showToast(it.message)

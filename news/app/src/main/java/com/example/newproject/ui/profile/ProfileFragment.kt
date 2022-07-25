@@ -1,15 +1,18 @@
 package com.example.newproject.ui.profile
 
+import android.R.id
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.newproject.databinding.FragmentProfileBinding
 import com.example.newproject.utils.Status
+import com.example.newproject.utils.UserStatus
 import com.example.newproject.utils.showToast
+
 
 class ProfileFragment : Fragment() {
 
@@ -37,13 +40,15 @@ class ProfileFragment : Fragment() {
         viewModel.getInfoUser()
 
         viewModel.infoUser.observe(viewLifecycleOwner) {
-            when(it.status) {
+            when (it.status) {
 
                 Status.SUCCESS -> {
-                    binding.userName.text = it.data?.firstName + " " + it.data?.lastName + " " + it.data?.middleName
-                    binding.userNumber.text = it.data?.contactPhone
+                    binding.userName.text =
+                        it.data?.firstName + " " + it.data?.lastName + " " + it.data?.middleName
+                    binding.userNumber.text = "0" + it.data?.contactPhone
                     binding.userBirth.text = it.data?.issueDate
-                    binding.userStatus.text = it.data?.status.toString()
+                    val statusID = it.data?.status!!
+                    getStatus(statusID)
                 }
 
                 Status.ERROR -> {
@@ -52,6 +57,17 @@ class ProfileFragment : Fragment() {
             }
         }
 
+    }
+
+    fun getStatus(id: Int) {
+        for (status in UserStatus.values()) {
+            if (status.id == id) {
+                binding.userStatus.text = status.desc
+                binding.creditStatus.text = status.creditStatus
+            } else {
+                binding.userStatus.text = "NONE"
+            }
+        }
     }
 
 
