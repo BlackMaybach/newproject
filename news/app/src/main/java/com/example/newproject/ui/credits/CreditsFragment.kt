@@ -11,13 +11,14 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import com.example.newproject.R
 import com.example.newproject.databinding.FragmentCreditsBinding
+import com.example.newproject.utils.Status
 import com.example.newproject.utils.gone
+import com.example.newproject.utils.showToast
 
 
 class CreditsFragment : Fragment() {
 
     private lateinit var binding: FragmentCreditsBinding
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +33,23 @@ class CreditsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+//        viewModel.getCreditReferences()
+//
+//        viewModel.references.observe(viewLifecycleOwner) {
+//            when(it.status) {
+//                Status.SUCCESS -> {
+//                    var distributionChannel = it.data?.payOutTypes
+//                    var providers = it.data?.providers
+//                    distributionChannelSpinner()
+//                }
+//
+//                Status.ERROR -> {
+//                    requireContext().showToast(it.message)
+//                }
+//            }
+//        }
     }
+
+
 
 }

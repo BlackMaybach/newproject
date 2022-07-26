@@ -86,15 +86,18 @@
                 android:layout_height="wrap_content"
                 android:text="Канал выдачи" />
 
-            <com.reginald.editspinner.EditSpinner
-                android:id="@+id/edit_spinner_canal"
-                style="@style/spinner"
+            <Spinner
+                android:id="@+id/payOutTypes"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                app:backgroundTint="@color/anotherGray"
+                app:smsp_itemSize="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:dropDownDrawable="@drawable/spinner_icon"
-                app:dropDownDrawableHeight="25dp"
-                app:dropDownDrawableSpacing="15dp"
-                app:dropDownDrawableWidth="25dp" />
+                android:layout_height="50dp"
+                app:smsp_itemColor="@color/black"
+                app:smsp_hint=""
+                app:smsp_itemListColor="@color/black"
+                app:smsp_selectedItemListColor="@color/anotherGray"
+                app:smsp_underlineColor="@color/anotherBlack"/>
         </LinearLayout>
 
 
@@ -109,15 +112,18 @@
                 android:layout_height="wrap_content"
                 android:text="Провайдеры" />
 
-            <com.reginald.editspinner.EditSpinner
-                android:id="@+id/edit_spinner_provider"
-                style="@style/spinner"
+            <Spinner
+                android:id="@+id/providers"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                app:backgroundTint="@color/anotherGray"
+                app:smsp_itemSize="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:dropDownDrawable="@drawable/spinner_icon"
-                app:dropDownDrawableHeight="25dp"
-                app:dropDownDrawableSpacing="15dp"
-                app:dropDownDrawableWidth="25dp" />
+                android:layout_height="50dp"
+                app:smsp_itemColor="@color/black"
+                app:smsp_hint=""
+                app:smsp_itemListColor="@color/black"
+                app:smsp_selectedItemListColor="@color/anotherGray"
+                app:smsp_underlineColor="@color/anotherBlack"/>
         </LinearLayout>
 
 

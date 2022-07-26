@@ -37,6 +37,8 @@
             android:layout_height="wrap_content"
             android:text="Укажите свой адрес фактического проживния" />
 
+
+
         <LinearLayout
             android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
@@ -49,15 +51,19 @@
                 android:layout_height="wrap_content"
                 android:text="Область" />
 
-            <com.reginald.editspinner.EditSpinner
-                style="@style/spinner"
-                android:id="@+id/edit_spinner_region"
+
+            <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+                android:id="@+id/regionsSpinner"
+                app:smsp_itemSize="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:dropDownDrawable="@drawable/spinner_icon"
-                app:dropDownDrawableHeight="25dp"
-                app:dropDownDrawableSpacing="15dp"
-                app:dropDownDrawableWidth="25dp" />
+                android:layout_height="50dp"
+                app:smsp_itemColor="@color/black"
+                app:smsp_hint=""
+                app:smsp_itemListColor="@color/black"
+                app:smsp_selectedItemListColor="@color/anotherGray"
+                app:smsp_underlineColor="@color/anotherBlack"/>
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -72,15 +78,16 @@
                 android:layout_height="wrap_content"
                 android:text="Район" />
 
-            <com.reginald.editspinner.EditSpinner
-                style="@style/spinner"
-                android:id="@+id/edit_spinner_district"
+            <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+                android:id="@+id/districtSpinner"
+                app:smsp_itemSize="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:dropDownDrawable="@drawable/spinner_icon"
-                app:dropDownDrawableHeight="25dp"
-                app:dropDownDrawableSpacing="15dp"
-                app:dropDownDrawableWidth="25dp" />
+                android:layout_height="50dp"
+                app:smsp_itemColor="@color/black"
+                app:smsp_hint=""
+                app:smsp_itemListColor="@color/black"
+                app:smsp_selectedItemListColor="@color/anotherGray"
+                app:smsp_underlineColor="@color/anotherBlack"/>
         </LinearLayout>
 
         <LinearLayout
@@ -95,15 +102,16 @@
                 android:layout_height="wrap_content"
                 android:text="Город/Село" />
 
-            <com.reginald.editspinner.EditSpinner
-                style="@style/spinner"
-                android:id="@+id/edit_spinner_city"
+            <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+                android:id="@+id/citySpinner"
+                app:smsp_itemSize="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:dropDownDrawable="@drawable/spinner_icon"
-                app:dropDownDrawableHeight="25dp"
-                app:dropDownDrawableSpacing="15dp"
-                app:dropDownDrawableWidth="25dp" />
+                android:layout_height="50dp"
+                app:smsp_itemColor="@color/black"
+                app:smsp_hint=""
+                app:smsp_itemListColor="@color/black"
+                app:smsp_selectedItemListColor="@color/anotherGray"
+                app:smsp_underlineColor="@color/anotherBlack"/>
         </LinearLayout>
 
         <LinearLayout

@@ -1,21 +1,17 @@
 package com.example.newproject.ui.online_registration
 
-import android.R
 import android.os.Bundle
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListAdapter
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.newproject.databinding.FragmentOnlineRegistrationBinding
+import com.example.newproject.ui.api.models.references.Area
+import com.example.newproject.ui.api.models.references.City
 import com.example.newproject.ui.api.models.references.Region
-import com.example.newproject.ui.registration.SmsViewModel
 import com.example.newproject.utils.Status
 import com.example.newproject.utils.showToast
-import com.reginald.editspinner.EditSpinner
 
 
 class OnlineRegistrationFragment : Fragment() {
@@ -29,7 +25,7 @@ class OnlineRegistrationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentOnlineRegistrationBinding.inflate(inflater,container,false)
+        binding = FragmentOnlineRegistrationBinding.inflate(inflater, container, false)
         binding.toolbar2.textToolbar.text = "Онлайн идентификация"
         binding.toolbar2.backButton.setOnClickListener {
             activity?.onBackPressed()
@@ -42,63 +38,17 @@ class OnlineRegistrationFragment : Fragment() {
         getReferencesOnlineReg()
     }
 
+
     private fun getReferencesOnlineReg() {
         viewModel.getReferences()
 
         viewModel.references.observe(viewLifecycleOwner) {
             when (it.status) {
                 Status.SUCCESS -> {
-
-
-
-                    val arrRegion: ArrayList<String> = ArrayList()
-//                    it.data?.regions?.get(0)?.let { it1 -> arrDistrict.add(it1.name) }
                     val regions = it.data?.regions!!
-                    for(regions in regions) {
-                        arrRegion.add(regions.name)
-                    }
-                    val mEditSpinnerRegion = binding.editSpinnerRegion
-                    val adapterRegion = ArrayAdapter(
-                        requireContext(), android.R.layout.simple_spinner_dropdown_item,
-                        arrRegion
-                    )
-                    mEditSpinnerRegion.setAdapter(adapterRegion)
-
-
-                    val arrDistrict: ArrayList<String> = ArrayList()
-//                    it.data?.areas?.get(0)?.let { it1 -> arrDistrict.add(it1.name) }
-                    val areas = it.data?.areas!!
-
-
-                    for(areas in areas) {
-                        arrDistrict.add(areas.name)
-                    }
-
-                    val mEditSpinnerDistrict = binding.editSpinnerDistrict
-                    val adapterDistrict = ArrayAdapter(
-                        requireContext(), android.R.layout.simple_spinner_dropdown_item,
-                        arrDistrict
-                    )
-                    mEditSpinnerDistrict.setAdapter(adapterDistrict)
-
-                    val arrCity: ArrayList<String> = ArrayList()
-//                    it.data?.cities?.get(0)?.let { it1 -> arrCity.add(it1.cityName) }
-                    val cities = it.data?.cities!!
-                    for(cities in cities) {
-                        arrCity.add(cities.cityName)
-                    }
-
-                    val mEditSpinnerCity = binding.editSpinnerCity
-                    val adapterCity = ArrayAdapter(
-                        requireContext(), android.R.layout.simple_spinner_dropdown_item,
-                        arrCity
-                    )
-                    mEditSpinnerCity.setAdapter(adapterCity)
-
-
-
-
-                    
+                    val areas = it.data.areas
+                    val city = it.data.cities
+                    regionsSpinner(regions, areas, city)
                 }
                 Status.ERROR -> {
                     requireContext().showToast(it.message)
@@ -106,5 +56,108 @@ class OnlineRegistrationFragment : Fragment() {
             }
         }
     }
+
+
+    private fun regionsSpinner(regions: List<Region>, areas: List<Area>, city: List<City>) {
+        val regionsSpinner = binding.regionsSpinner
+        if (regionsSpinner != null) {
+            val adapter = ArrayAdapter(
+                requireContext(),
+                android.R.layout.simple_spinner_item, regions
+            )
+            regionsSpinner.adapter = adapter
+
+            regionsSpinner.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View, position: Int, id: Long
+                ) {
+                    Toast.makeText(
+                        requireContext(),
+                        regions[position].id.toString(),
+                        Toast.LENGTH_LONG
+                    ).show()
+
+                    //получаем id области
+                    val regionID = regions[position].id
+
+                    //сравниваем id района с id областью
+                    val regionsAreasFilter = areas.filter { it.regionId == regionID }
+
+                    // по выбранному элементу сравниваем и получаем инфу с id области
+                    districtSpinner(regionsAreasFilter, city)
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+
+                }
+            }
+        }
+    }
+
+    private fun districtSpinner(regionsAreasFilter: List<Area>, cityID: List<City>) {
+        val districtSpinner = binding.districtSpinner
+        if (districtSpinner != null) {
+            val adapter = ArrayAdapter(
+                requireContext(),
+                android.R.layout.simple_spinner_item, regionsAreasFilter
+            )
+            districtSpinner.adapter = adapter
+
+            districtSpinner.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View, position: Int, id: Long
+                ) {
+                    Toast.makeText(
+                        requireContext(),
+                        regionsAreasFilter[position].id.toString(),
+                        Toast.LENGTH_LONG
+                    ).show()
+                    val districtID = regionsAreasFilter[position].id
+                    val areasCityFilter = cityID.filter { it.areaId == districtID }
+                    citySpinner(areasCityFilter)
+
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+
+                }
+            }
+        }
+    }
+
+    private fun citySpinner(areasCityFilter: List<City>) {
+        val citySpinner = binding.citySpinner
+        if (citySpinner != null) {
+            val adapter = ArrayAdapter(
+                requireContext(),
+                android.R.layout.simple_spinner_item, areasCityFilter
+            )
+            citySpinner.adapter = adapter
+
+            citySpinner.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View, position: Int, id: Long
+                ) {
+                    Toast.makeText(
+                        requireContext(),
+                        areasCityFilter[position].id.toString(),
+                        Toast.LENGTH_LONG
+                    ).show()
+
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+
+                }
+            }
+        }
+    }
+
 
 }

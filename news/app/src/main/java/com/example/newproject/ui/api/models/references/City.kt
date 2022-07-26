@@ -5,4 +5,6 @@ data class City(
     val id: Int,
     val cityName: String,
     val regionId: Int
-)
+){
+    override fun toString(): String = cityName
+}
