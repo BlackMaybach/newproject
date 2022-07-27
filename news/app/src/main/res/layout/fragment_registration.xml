@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 <data>
     <variable
@@ -8,14 +10,11 @@
         type="com.example.newproject.ui.registration.RegistrationViewModel" />
 </data>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.registration.RegistrationFragment"
-    android:orientation="vertical"
-    android:background="@color/background">
+    android:orientation="vertical">
 
     <include
         android:id="@+id/toolbar2"
@@ -31,7 +30,7 @@
 
         <TextView
             android:id="@+id/tw"
-            style="@style/BigBoldTitle"
+            style="@style/myBigBoldTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15sp"
@@ -39,7 +38,7 @@
 
         <TextView
             android:id="@+id/tw2"
-            style="@style/BigBoldTitle"
+            style="@style/myBigBoldTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tw"
@@ -54,7 +53,7 @@
         android:layout_gravity="center">
 
         <TextView
-            style="@style/TinyText"
+            style="@style/myMiddleTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Для того чтобы продлжить вам необходимо авторизоваться в нашем мобильном приложении при помощи номера телефона." />
@@ -68,7 +67,7 @@
 
         <TextView
             android:id="@+id/tw3"
-            style="@style/MicroText"
+            style="@style/myMicroText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Номер телефона" />
@@ -76,7 +75,7 @@
 
         <EditText
             android:id="@+id/registrationPhoneET"
-            style="@style/PhoneET"
+            style="@style/myEditText"
             android:maxLength="9"
             android:layout_below="@+id/tw3"
             android:inputType="number" />
@@ -99,15 +98,14 @@
 
         <TextView
             android:id="@+id/textView3"
-            style="@style/MicroText"
+            style="@style/myMicroText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Я принимаю"
-            android:textColor="@color/anotherGray" />
+            android:text="Я принимаю" />
 
         <TextView
             android:id="@+id/toAgreementFragment"
-            style="@style/MicroText"
+            style="@style/myMicroText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -119,11 +117,10 @@
 
         <TextView
             android:id="@+id/textView2"
-            style="@style/MicroText"
+            style="@style/myMicroText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="лицензионного соглашения"
-            android:textColor="@color/anotherGray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -136,7 +133,7 @@
         android:layout_gravity="center">
         <Button
             android:id="@+id/btnToSmsFragment"
-            style="@style/ButtonYellow"
+            style="@style/myYellowButton"
             android:text="Продолжить"/>
     </LinearLayout>
 

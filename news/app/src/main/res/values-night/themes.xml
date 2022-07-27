@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Newproject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Newproject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +12,164 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/anotherBlack</item>
     </style>
+
+    <!--Bottom-->
+
+    <style name="myBottomNav">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <!--Toolbar-->
+    <style name="myToolbarMain">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="myToolbar">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <!---->
+
+    <style name="myToolbarText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!---->
+
+    <style name="myToolbarExit" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <!---->
+
+    <style name="myBackgroundBox">
+        <item name="android:background">@drawable/round_corner_dark</item>
+    </style>
+
+    <!---->
+
+    <style name="myBoldTitle">
+        <item name="android:textColor">@color/anotherGrayTwo</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!---->
+
+    <style name="myBackgroundBoxTwo">
+        <item name="android:background">@drawable/round_corner_dark_two</item>
+    </style>
+
+    <!-- gradient-->
+
+    <style name="myGradientBackground">
+        <item name="android:background">@drawable/gradient_dark</item>
+    </style>
+
+    <!---->
+
+    <style name="myNormalTitle">
+        <item name="android:textColor">@color/anotherGrayTwo</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!---->
+
+    <style name="myBackgroundBoxChild">
+        <item name="android:background">@drawable/round_corner_dark_two</item>
+    </style>
+
+    <!---->
+
+    <style name="myToolbarTextTwo">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+    <style name="myBackButtonIcon">
+        <item name="android:src">@drawable/back_button</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <!---->
+
+    <style name="myTitleWithBottomLine">
+        <item name="android:textColor">@color/anotherGray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/bottom_line_gray</item>
+    </style>
+
+    <!---->
+
+    <style name="myMicroText">
+        <item name="android:textColor">@color/anotherGray</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <!---->
+
+    <style name="myForm">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/anotherGrayTwo</item>
+        <item name="android:layout_height">50sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:padding">10sp</item>
+        <item name="android:background">@drawable/round_corner_dark</item>
+    </style>
+
+    <!---->
+
+    <style name="myEditText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">@color/anotherGray</item>
+        <item name="android:textColor">@color/anotherGrayTwo </item>
+        <item name="android:textColorHint">@color/anotherGray</item>
+        <item name="android:layout_height">50sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_color</item>
+    </style>
+
+    <!---->
+
+    <style name="myYellowButton">
+        <item name="android:backgroundTint">@color/yellow</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_height">60sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!---->
+
+    <style name="myMicroBox">
+        <item name="android:background">@drawable/corner_step_dark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/anotherGrayTwo</item>
+    </style>
+
+    <!---->
+
+    <style name="myBigBoldTitle">
+        <item name="android:textColor">@color/anotherGrayTwo</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <!---->
+
+    <style name="myMiddleTitle">
+        <item name="android:textColor">@color/anotherGray</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
 </resources>

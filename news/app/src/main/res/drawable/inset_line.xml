@@ -5,6 +5,6 @@
     android:insetRight="-4dp">
     <shape android:shape="rectangle">
         <stroke android:width="4dp" android:color="@color/yellow" />
-        <solid android:color="@color/background" />
+        <solid android:color="@null" />
     </shape>
 </inset>

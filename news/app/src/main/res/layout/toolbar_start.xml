@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white">
+    android:layout_height="wrap_content">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -13,7 +12,7 @@
             android:id="@+id/toolbarStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            style="@style/myToolbarMain"
             android:contentInsetStart="0dp"
             android:contentInsetLeft="0dp"
             android:contentInsetEnd="0dp"
@@ -35,25 +34,23 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10sp"
                     android:text="Главная"
-                    android:textColor="@color/anotherBlack"
-                    android:textSize="15sp" />
+                    style="@style/myToolbarText"/>
 
                 <Button
                     android:id="@+id/toolbarExitButton"
-                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    style="@style/myToolbarExit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:text="Выйти"
                     android:textAllCaps="false"
-                    android:textColor="@color/anotherBlack"
-                    android:textSize="11sp"
                     app:icon="@drawable/ic_baseline_exit_to_app_24"
                     app:iconGravity="textEnd"
                     app:iconSize="14sp"
                     app:iconTint="@color/anotherBlack"
                     app:rippleColor="@color/background" />
+
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>

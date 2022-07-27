@@ -1,18 +1,16 @@
 package com.example.newproject.ui.addNew
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Toast
+import android.widget.*
+import com.example.newproject.R
 import com.example.newproject.databinding.FragmentAddNewBinding
 import com.example.newproject.ui.api.models.creditReferences.PayOutType
-import com.example.newproject.utils.Status
-import com.example.newproject.utils.gone
-import com.example.newproject.utils.showToast
+import com.example.newproject.utils.*
 
 
 class AddNewFragment : Fragment() {
@@ -23,6 +21,7 @@ class AddNewFragment : Fragment() {
 
     var typeName: String? = null
     var providerName: String? = null
+    var enumL: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -65,7 +64,7 @@ class AddNewFragment : Fragment() {
                             Toast.makeText(
                                 requireContext(),
                                 payOutTypes[position].value,
-                                Toast.LENGTH_LONG
+                                Toast.LENGTH_SHORT
                             ).show()
                             typeName = payOutTypes[position].value
                         }
@@ -90,11 +89,12 @@ class AddNewFragment : Fragment() {
                             Toast.makeText(
                                 requireContext(),
                                 providers[position].providerName,
-                                Toast.LENGTH_LONG
+                                Toast.LENGTH_SHORT
                             ).show()
                             providerName = providers[position].providerName
 
                         }
+
                         override fun onNothingSelected(parent: AdapterView<*>) {
 
                         }
@@ -113,28 +113,49 @@ class AddNewFragment : Fragment() {
         val btn = binding.btnConfirm
 
         btn.setOnClickListener {
-            val radioGroup = binding.radioGroup
+
             val sum = binding.creditSum.text.toString()
             val date = binding.creditDate.text.toString()
             val number = binding.creditNumber.text.toString()
+            val radioGroup = binding.radioGroup
+
+            // Get the checked radio button id from radio group
+            var id: Int = radioGroup.checkedRadioButtonId
+            if (id != -1) { // If any radio button checked from radio group
+                // Get the instance of radio button using id
+                val radio: RadioButton = view?.findViewById(id)!!
+                enumLanguage(radio.text as String)
+            } else {
+                // If no radio button checked in this radio group
+                Toast.makeText(
+                    requireContext(), "On button click : nothing selected",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
 
 
             if (sum.isEmpty()) {
-                Toast.makeText(requireContext(), "Заполните поле сумма", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Заполните поле сумма", Toast.LENGTH_SHORT).show()
             } else if (date.isEmpty()) {
-                Toast.makeText(requireContext(), "Заполните поле срок кредита", Toast.LENGTH_LONG)
+                Toast.makeText(requireContext(), "Заполните поле срок кредита", Toast.LENGTH_SHORT)
                     .show()
             } else if (number.isEmpty()) {
-                Toast.makeText(requireContext(), "Заполните поле номер", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Заполните поле номер", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(
                     requireContext(),
-                    "You have Selected $typeName $providerName $sum $date $number",
-                    Toast.LENGTH_LONG
+                    "You have Selected $enumL $typeName $providerName $sum $date $number",
+                    Toast.LENGTH_SHORT
                 ).show()
             }
         }
     }
 
-
+    private fun enumLanguage(language: String) {
+        for (status in Language.values()) {
+            if (status.take == language) {
+                enumL = status.lang
+            }
+        }
+    }
 }

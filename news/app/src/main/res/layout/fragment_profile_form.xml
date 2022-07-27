@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     android:orientation="vertical"
     tools:context=".ui.profile.ProfileFormFragment">
 
@@ -22,7 +21,7 @@
             android:padding="10dp">
 
             <TextView
-                style="@style/MicroText2"
+                style="@style/myTitleWithBottomLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -38,15 +37,14 @@
                 android:paddingBottom="10sp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Фамилия" />
 
                 <TextView
                     android:id="@+id/lastName"
-                    style="@style/ProfileForm"
-                    android:background="@drawable/round_corner_tw"
+                    style="@style/myForm"
                     android:text="Фамилия" />
             </LinearLayout>
 
@@ -57,15 +55,14 @@
                 android:paddingBottom="10sp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Имя" />
 
                 <TextView
                     android:id="@+id/firstName"
-                    style="@style/ProfileForm"
-                    android:background="@drawable/round_corner_tw"
+                    style="@style/myForm"
                     android:text="Имя" />
             </LinearLayout>
 
@@ -76,15 +73,14 @@
                 android:paddingBottom="10sp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Отчество" />
 
                 <TextView
                     android:id="@+id/middleName"
-                    style="@style/ProfileForm"
-                    android:background="@drawable/round_corner_tw"
+                    style="@style/myForm"
                     android:text="Отчество" />
             </LinearLayout>
 
@@ -95,17 +91,16 @@
                 android:paddingBottom="10sp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Тип документа" />
 
                 <TextView
                     android:id="@+id/documentTypeId"
-                    style="@style/ProfileForm"
+                    style="@style/myForm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/round_corner_tw"
                     android:text="" />
             </LinearLayout>
 
@@ -123,15 +118,14 @@
                     android:paddingEnd="10dp">
 
                     <TextView
-                        style="@style/MicroText"
+                        style="@style/myMicroText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ИНН" />
 
                     <TextView
                         android:id="@+id/identificationNumber"
-                        style="@style/ProfileForm"
-                        android:background="@drawable/round_corner_tw"
+                        style="@style/myForm"
                         android:text="ИНН" />
                 </LinearLayout>
 
@@ -143,15 +137,14 @@
                     android:paddingStart="10dp">
 
                     <TextView
-                        style="@style/MicroText"
+                        style="@style/myMicroText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Номер" />
 
                     <TextView
                         android:id="@+id/contactPhone"
-                        style="@style/ProfileForm"
-                        android:background="@drawable/round_corner_tw"
+                        style="@style/myForm"
                         android:text="Номер" />
                 </LinearLayout>
             </LinearLayout>
@@ -163,15 +156,14 @@
                 android:paddingBottom="10sp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Серия документа" />
 
                 <TextView
                     android:id="@+id/documentSeries"
-                    style="@style/ProfileForm"
-                    android:background="@drawable/round_corner_tw"
+                    style="@style/myForm"
                     android:text="Серия" />
             </LinearLayout>
 
@@ -182,20 +174,19 @@
                 android:paddingBottom="10sp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Кем выдан" />
 
                 <TextView
                     android:id="@+id/issueAuthority"
-                    style="@style/ProfileForm"
-                    android:background="@drawable/round_corner_tw"
+                    style="@style/myForm"
                     android:text="Кем выдан" />
             </LinearLayout>
 
             <TextView
-                style="@style/MicroText2"
+                style="@style/myTitleWithBottomLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -211,15 +202,14 @@
                 android:paddingBottom="10sp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Нас. Пункт" />
 
                 <TextView
                     android:id="@+id/registrationCityName"
-                    style="@style/ProfileForm"
-                    android:background="@drawable/round_corner_tw"
+                    style="@style/myForm"
                     android:text="Бишкек" />
             </LinearLayout>
 
@@ -230,15 +220,14 @@
                 android:paddingBottom="10sp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Микрорайон/ улица" />
 
                 <TextView
                     android:id="@+id/registrationStreet"
-                    style="@style/ProfileForm"
-                    android:background="@drawable/round_corner_tw"
+                    style="@style/myForm"
                     android:text="Гоголя" />
             </LinearLayout>
 
@@ -256,15 +245,14 @@
                     android:paddingEnd="10dp">
 
                     <TextView
-                        style="@style/MicroText"
+                        style="@style/myMicroText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Дом/корпус" />
 
                     <TextView
                         android:id="@+id/registrationHouse"
-                        style="@style/ProfileForm"
-                        android:background="@drawable/round_corner_tw"
+                        style="@style/myForm"
                         android:text="Дом/корпус" />
                 </LinearLayout>
 
@@ -276,15 +264,14 @@
                     android:paddingStart="10dp">
 
                     <TextView
-                        style="@style/MicroText"
+                        style="@style/myMicroText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Квартира/комната" />
 
                     <TextView
                         android:id="@+id/registrationFlat"
-                        style="@style/ProfileForm"
-                        android:background="@drawable/round_corner_tw"
+                        style="@style/myForm"
                         android:text="Квартира/комната" />
                 </LinearLayout>
             </LinearLayout>
@@ -306,15 +293,14 @@
                 android:paddingBottom="10sp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Нас. Пункт" />
 
                 <TextView
                     android:id="@+id/registrationCityNameFact"
-                    style="@style/ProfileForm"
-                    android:background="@drawable/round_corner_tw"
+                    style="@style/myForm"
                     android:text="Бишкек" />
             </LinearLayout>
 
@@ -325,15 +311,14 @@
                 android:paddingBottom="10sp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Микрорайон/ улица" />
 
                 <TextView
                     android:id="@+id/registrationStreetFact"
-                    style="@style/ProfileForm"
-                    android:background="@drawable/round_corner_tw"
+                    style="@style/myForm"
                     android:text="Гоголя" />
             </LinearLayout>
 
@@ -351,15 +336,14 @@
                     android:paddingEnd="10dp">
 
                     <TextView
-                        style="@style/MicroText"
+                        style="@style/myMicroText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Дом/корпус" />
 
                     <TextView
                         android:id="@+id/registrationHouseFact"
-                        style="@style/ProfileForm"
-                        android:background="@drawable/round_corner_tw"
+                        style="@style/myForm"
                         android:text="Дом/корпус" />
                 </LinearLayout>
 
@@ -371,15 +355,14 @@
                     android:paddingStart="10dp">
 
                     <TextView
-                        style="@style/MicroText"
+                        style="@style/myMicroText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Квартира/комната" />
 
                     <TextView
                         android:id="@+id/registrationFlatFact"
-                        style="@style/ProfileForm"
-                        android:background="@drawable/round_corner_tw"
+                        style="@style/myForm"
                         android:text="Квартира/комната" />
                 </LinearLayout>
             </LinearLayout>

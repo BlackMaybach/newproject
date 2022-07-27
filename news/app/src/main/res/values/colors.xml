@@ -18,4 +18,5 @@
     <color name="backgroundGray">#F8F8F8</color>
     <color name="green">#2F9C2C</color>
     <color name="anotherGrayTW">#ECECEC</color>
+    <color name="anotherGrayTwo">#E2E2E2</color>
 </resources>

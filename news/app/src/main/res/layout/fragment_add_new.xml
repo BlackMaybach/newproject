@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.addNew.AddNewFragment"
-    android:background="@color/background">
+    tools:context=".ui.addNew.AddNewFragment">
 
     <include
         android:id="@+id/toolbar1"
@@ -20,7 +19,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar1">
 
         <TextView
-            style="@style/MicroText2"
+            style="@style/myTitleWithBottomLine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -41,14 +40,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Сумма кредита" />
 
                 <EditText
                     android:id="@+id/creditSum"
-                    style="@style/spinner"
+                    style="@style/myEditText"
                     android:inputType="number" />
             </LinearLayout>
 
@@ -61,7 +60,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Срок кредита" />
@@ -70,7 +69,7 @@
                 <EditText
                     android:id="@+id/creditDate"
                     android:inputType="number"
-                    style="@style/spinner" />
+                    style="@style/myEditText" />
             </LinearLayout>
         </LinearLayout>
 
@@ -81,7 +80,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/MicroText"
+                style="@style/myMicroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Канал выдачи" />
@@ -90,13 +89,8 @@
                 android:id="@+id/payOutTypes"
                 style="@style/Widget.AppCompat.Spinner.Underlined"
                 app:backgroundTint="@color/anotherGray"
-                app:smsp_itemSize="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:smsp_itemColor="@color/black"
-                app:smsp_hint=""
-                app:smsp_itemListColor="@color/black"
-                app:smsp_selectedItemListColor="@color/anotherGray"
                 app:smsp_underlineColor="@color/anotherBlack"/>
         </LinearLayout>
 
@@ -107,7 +101,7 @@
             android:layout_marginBottom="10dp"
             android:orientation="vertical">
             <TextView
-                style="@style/MicroText"
+                style="@style/myMicroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Провайдеры" />
@@ -119,10 +113,6 @@
                 app:smsp_itemSize="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:smsp_itemColor="@color/black"
-                app:smsp_hint=""
-                app:smsp_itemListColor="@color/black"
-                app:smsp_selectedItemListColor="@color/anotherGray"
                 app:smsp_underlineColor="@color/anotherBlack"/>
         </LinearLayout>
 
@@ -134,7 +124,7 @@
             android:layout_marginBottom="10dp"
             android:orientation="vertical">
             <TextView
-                style="@style/MicroText"
+                style="@style/myMicroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Номер" />
@@ -142,7 +132,7 @@
             <EditText
                 android:id="@+id/creditNumber"
                 android:inputType="number"
-                style="@style/spinner" />
+                style="@style/myEditText" />
         </LinearLayout>
 
 
@@ -152,7 +142,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/MicroText2"
+                style="@style/myTitleWithBottomLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bottom_line_gray"
@@ -168,22 +158,24 @@
                 <RadioButton
                     android:id="@+id/ru"
                     android:checked="true"
-                    style="@style/MyRadioButton"
+                    style="@style/myNormalTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="Русский"/>
+                    android:text="Русский"
+                    android:buttonTint="@color/yellow"/>
 
                 <RadioButton
                     android:id="@+id/kg"
-                    style="@style/MyRadioButton"
+                    style="@style/myNormalTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="Кыргызский"/>
+                    android:text="Кыргызский"
+                    android:buttonTint="@color/yellow"/>
             </RadioGroup>
 
 
             <TextView
-                style="@style/NormalTitle"
+                style="@style/myNormalTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -195,7 +187,7 @@
 
     <Button
         android:id="@+id/btnConfirm"
-        style="@style/ButtonYellow"
+        style="@style/myYellowButton"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10sp"
         android:layout_marginEnd="10sp"

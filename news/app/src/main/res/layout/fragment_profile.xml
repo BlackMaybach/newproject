@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     android:orientation="vertical"
     tools:context=".ui.profile.ProfileFragment">
 
@@ -25,7 +24,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_corner"
+                style="@style/myBackgroundBox"
                 android:orientation="vertical"
                 android:padding="10dp">
 
@@ -51,7 +50,7 @@
 
                         <TextView
                             android:id="@+id/userName"
-                            style="@style/NormalBoldTitle"
+                            style="@style/myBoldTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Садыков Искендер Мирович" />
@@ -104,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/round_corner_gray"
+                    style="@style/myBackgroundBoxTwo"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -118,8 +117,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Статус "
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
+                            style="@style/myNormalTitle" />
 
                         <TextView
                             android:id="@+id/userStatus"
@@ -169,7 +167,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/gradient"
+                    style="@style/myGradientBackground"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -178,13 +176,13 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:background="@drawable/round_corner"
+                        style="@style/myBackgroundBoxChild"
                         android:scaleType="center"
                         android:src="@drawable/photo"
                         app:tint="@color/yellow" />
 
                     <TextView
-                        style="@style/NormalTitle"
+                        style="@style/myNormalTitle"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -200,7 +198,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/gradient"
+                    style="@style/myGradientBackground"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -209,13 +207,13 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:background="@drawable/round_corner"
+                        style="@style/myBackgroundBoxChild"
                         android:scaleType="center"
                         android:src="@drawable/time"
                         app:tint="@color/yellow" />
 
                     <TextView
-                        style="@style/NormalTitle"
+                        style="@style/myNormalTitle"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -231,7 +229,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/gradient"
+                    style="@style/myGradientBackground"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -240,13 +238,13 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:background="@drawable/round_corner"
+                        style="@style/myBackgroundBoxChild"
                         android:scaleType="center"
                         android:src="@drawable/key"
                         app:tint="@color/yellow" />
 
                     <TextView
-                        style="@style/NormalTitle"
+                        style="@style/myNormalTitle"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -262,7 +260,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/gradient"
+                    style="@style/myGradientBackground"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -271,13 +269,13 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:background="@drawable/round_corner"
+                        style="@style/myBackgroundBoxChild"
                         android:scaleType="center"
                         android:src="@drawable/ic_baseline_exit_to_app_24"
                         app:tint="@color/yellow" />
 
                     <TextView
-                        style="@style/NormalTitle"
+                        style="@style/myNormalTitle"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -301,7 +299,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/gradient"
+                    style="@style/myGradientBackground"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -310,13 +308,13 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:background="@drawable/round_corner"
+                        style="@style/myBackgroundBoxChild"
                         android:scaleType="center"
                         android:src="@drawable/sound"
                         app:tint="@color/yellow" />
 
                     <TextView
-                        style="@style/NormalTitle"
+                        style="@style/myNormalTitle"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -330,10 +328,12 @@
 
 
                 <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/lightTheme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/gradient"
+                    style="@style/myGradientBackground"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -342,13 +342,46 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:background="@drawable/round_corner"
+                        style="@style/myBackgroundBoxChild"
+                        android:scaleType="center"
+                        android:src="@drawable/sun"
+                        app:tint="@color/yellow" />
+
+                    <TextView
+                        style="@style/myNormalTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Светлая тема приложения"
+                        android:textAlignment="textStart"
+                        tools:ignore="RtlCompat" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/darkTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    style="@style/myGradientBackground"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        style="@style/myBackgroundBoxChild"
                         android:scaleType="center"
                         android:src="@drawable/night"
                         app:tint="@color/yellow" />
 
                     <TextView
-                        style="@style/NormalTitle"
+                        style="@style/myNormalTitle"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -364,7 +397,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/gradient"
+                    style="@style/myGradientBackground"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -373,13 +406,13 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:background="@drawable/round_corner"
+                        style="@style/myBackgroundBoxChild"
                         android:scaleType="center"
                         android:src="@drawable/security"
                         app:tint="@color/yellow" />
 
                     <TextView
-                        style="@style/NormalTitle"
+                        style="@style/myNormalTitle"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -395,7 +428,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/gradient"
+                    style="@style/myGradientBackground"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -404,13 +437,13 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:background="@drawable/round_corner"
+                        style="@style/myBackgroundBoxChild"
                         android:scaleType="center"
                         android:src="@drawable/ic_baseline_exit_to_app_24"
                         app:tint="@color/yellow" />
 
                     <TextView
-                        style="@style/NormalTitle"
+                        style="@style/myNormalTitle"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"

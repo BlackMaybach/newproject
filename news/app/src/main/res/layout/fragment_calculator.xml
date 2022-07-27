@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.calculator.CalculatorFragment"
-    android:background="@color/background">
+    tools:context=".ui.calculator.CalculatorFragment">
 
     <include
         android:id="@+id/toolbar1"
@@ -22,13 +21,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/NormalTitle"
+            style="@style/myNormalTitle"
             android:layout_marginBottom="15dp"
             android:text="Данная функция позволяет легко и быстро рассчитать график платежей по планируемому кредиту или займу, чтобы оценить свои возможности выполнить обязательства и погасить долг. Зная несколько параметров кредита/займа, вы можете подобрать удобные для вас условия и сравнить их с предложениями кредиторов."
             />
 
         <TextView
-            style="@style/MicroText2"
+            style="@style/myTitleWithBottomLine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -43,20 +42,18 @@
             android:layout_marginBottom="10dp"
             android:orientation="vertical">
             <TextView
-                style="@style/MicroText"
+                style="@style/myMicroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Тип расчета" />
 
-            <com.reginald.editspinner.EditSpinner
+            <Spinner
                 android:id="@+id/edit_spinner_calculation"
-                style="@style/spinner"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:dropDownDrawable="@drawable/spinner_icon"
-                app:dropDownDrawableHeight="25dp"
-                app:dropDownDrawableSpacing="15dp"
-                app:dropDownDrawableWidth="25dp" />
+                android:layout_height="50dp"
+                app:backgroundTint="@color/anotherGray"
+                app:smsp_underlineColor="@color/anotherBlack"/>
         </LinearLayout>
 
         <LinearLayout
@@ -65,7 +62,7 @@
             android:layout_marginBottom="10dp"
             android:orientation="vertical">
             <TextView
-                style="@style/MicroText"
+                style="@style/myMicroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Сумма кредита" />
@@ -73,7 +70,7 @@
             <EditText
                 android:id="@+id/calcSumCredit"
                 android:inputType="number"
-                style="@style/spinner" />
+                style="@style/myEditText" />
 
         </LinearLayout>
 
@@ -89,14 +86,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Срок кредита" />
 
                 <EditText
                     android:id="@+id/calcDateCredit"
-                    style="@style/spinner"
+                    style="@style/myEditText"
                     android:inputType="number" />
             </LinearLayout>
 
@@ -109,7 +106,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Процентная ставка" />
@@ -118,7 +115,7 @@
                 <EditText
                     android:id="@+id/calcRate"
                     android:inputType="number"
-                    style="@style/spinner" />
+                    style="@style/myEditText" />
             </LinearLayout>
         </LinearLayout>
 
@@ -134,14 +131,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Дата первой выплаты" />
 
                 <EditText
                     android:id="@+id/calcFirstDate"
-                    style="@style/spinner"
+                    style="@style/myEditText"
                     android:inputType="number" />
             </LinearLayout>
 
@@ -154,7 +151,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Льготный период по осн. долгу" />
@@ -163,7 +160,7 @@
                 <EditText
                     android:id="@+id/calcPeriod"
                     android:inputType="number"
-                    style="@style/spinner" />
+                    style="@style/myEditText" />
             </LinearLayout>
         </LinearLayout>
 
@@ -171,7 +168,7 @@
 
     <Button
         android:id="@+id/btnConfirm"
-        style="@style/ButtonYellow"
+        style="@style/myYellowButton"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10sp"
         android:layout_marginEnd="10sp"

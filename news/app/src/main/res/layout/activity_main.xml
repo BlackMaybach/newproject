@@ -33,6 +33,6 @@
         app:labelVisibilityMode="labeled"
         app:itemIconTint="@drawable/bottom_navigation_selector"
         app:itemTextColor="@drawable/bottom_navigation_selector"
-        android:background="@color/white"/>
+        style="@style/myBottomNav"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

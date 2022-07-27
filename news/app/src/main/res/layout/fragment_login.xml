@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginFragment"
-    android:orientation="vertical"
-    android:background="@color/background">
+    android:orientation="vertical">
 
     <include
         android:id="@+id/toolbar2"
@@ -26,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15sp"
             android:text="Войти"
-            style="@style/BigBoldTitle"/>
+            style="@style/myBigBoldTitle"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -36,10 +35,10 @@
         android:layout_gravity="center">
 
         <TextView
+            style="@style/myMiddleTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Для того чтобы продлжить вам необходимо авторизоваться в нашем мобильном приложении при помощи номера телефона."
-            style="@style/TinyText"  />
+            android:text="Для того чтобы продлжить вам необходимо авторизоваться в нашем мобильном приложении при помощи номера телефона." />
 
     </RelativeLayout>
 
@@ -50,17 +49,17 @@
 
         <TextView
             android:id="@+id/tw3"
-            style="@style/MicroText"
+            style="@style/myMicroText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Номер телефона" />
 
         <EditText
-            android:inputType="number"
             android:id="@+id/loginPhoneET"
-            style="@style/PhoneET"
+            style="@style/myEditText"
             android:layout_below="@+id/tw3"
-            android:hint="+996700702095" />
+            android:hint="+996700702095"
+            android:inputType="number" />
 
     </RelativeLayout>
 
@@ -71,14 +70,14 @@
 
         <TextView
             android:id="@+id/tw4"
-            style="@style/MicroText"
+            style="@style/myMicroText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Пароль" />
 
         <EditText
             android:id="@+id/loginPasswordET"
-            style="@style/PhoneET"
+            style="@style/myEditText"
             android:layout_below="@+id/tw4"
             android:hint="Введите пароль"
             android:inputType="textPassword" />
@@ -91,7 +90,7 @@
         android:layout_gravity="center">
         <Button
             android:id="@+id/toHomeFragment"
-            style="@style/ButtonYellow"
+            style="@style/myYellowButton"
             android:text="Продолжить"/>
     </LinearLayout>
 

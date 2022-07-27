@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.start.StartFragment"
-    android:orientation="vertical"
-    android:background="@color/background">
+    android:orientation="vertical">
 
     <include
         android:id="@+id/toolbar1"
@@ -37,13 +36,13 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5sp"
             android:text="О портале"
-            style="@style/NormalBoldTitle"/>
+            style="@style/myBoldTitle"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Друзья, здесь Вы можете получить по паспорту Онлайн кредит до 15 000 сом,на электронный кошелек (Баланс/ Мегапэй/ О!Деньги/ Элсом) или карту Элкарт любого банка КР, НЕ ПРИХОДЯ в офис Компании!"
-            style="@style/NormalTitle" />
+            style="@style/myNormalTitle" />
     </LinearLayout>
 
     <LinearLayout
@@ -58,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Открыть сайт Компании:"
-            style="@style/NormalTitle"/>
+            style="@style/myNormalTitle"/>
 
         <TextView
             android:id="@+id/link"
@@ -83,14 +82,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5sp"
             android:text="Вход или регистрация"
-            style="@style/NormalBoldTitle" />
+            style="@style/myBoldTitle" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Друзья, здесь Вы можете получить по паспорту Онлайн кредит до 15 000 сом,на электронный кошелек (Баланс/ Мегапэй/ О!Деньги/ Элсом) или карту Элкарт любого банка КР, НЕ ПРИХОДЯ в офис Компании!
 "
-            style="@style/NormalTitle"  />
+            style="@style/myNormalTitle"  />
 
     </LinearLayout>
 
@@ -103,14 +102,14 @@
 
         <Button
             android:id="@+id/loginFragment"
-            style="@style/ButtonYellow"
+            style="@style/myYellowButton"
             android:text="Войти"/>
 
         <Button
             android:id="@+id/regFragment"
             android:layout_width="match_parent"
             android:layout_height="60sp"
-            app:strokeColor="#F2A900"
+            app:strokeColor="#B88A1E"
             android:text="ЗАРЕГИСТРИРОВАТЬСЯ"
             android:textColor="@color/yellow"
             android:textSize="15sp"

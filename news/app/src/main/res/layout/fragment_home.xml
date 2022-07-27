@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     android:orientation="vertical"
     tools:context=".ui.home.HomeFragment">
 
@@ -44,14 +43,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/NormalBoldTitle"
+                    style="@style/myBoldTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5sp"
                     android:text="О портале" />
 
                 <TextView
-                    style="@style/NormalTitle"
+                    style="@style/myNormalTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Друзья, здесь Вы можете получить по паспорту Онлайн кредит до 15 000 сом,на электронный кошелек (Баланс/ Мегапэй/ О!Деньги/ Элсом) или карту Элкарт любого банка КР, НЕ ПРИХОДЯ в офис Компании!
@@ -65,7 +64,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    style="@style/NormalTitle"
+                    style="@style/myNormalTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Открыть сайт Компании:" />
@@ -91,14 +90,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/NormalBoldTitle"
+                    style="@style/myBoldTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5sp"
                     android:text="Инструкция" />
 
                 <TextView
-                    style="@style/NormalTitle"
+                    style="@style/myNormalTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Для этого Вам достаточно пройти на нашем портале следующие 5 шагов:" />
@@ -106,22 +105,21 @@
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                style="@style/margin10"
+                style="@style/myBackgroundBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/round_corner"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:elevation="5dp"
                 android:padding="10dp">
 
                 <TextView
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/corner_step"
+                    style="@style/myMicroBox"
                     android:padding="3dp"
                     android:text="Шаг:1"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.005"
@@ -130,7 +128,7 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
-                    style="@style/NormalBoldTitle"
+                    style="@style/myBoldTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ознакомиться с условиями"
@@ -143,8 +141,7 @@
 
                 <TextView
                     android:id="@+id/textView5"
-
-                    style="@style/mainDescriptionStep"
+                    style="@style/myNormalTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
@@ -155,7 +152,7 @@
 
                 <Button
                     android:id="@+id/linkButton"
-                    style="@style/ButtonYellow"
+                    style="@style/myYellowButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Открыть сайт Компании: www.elet.kg"
@@ -170,11 +167,12 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                style="@style/margin10"
+                style="@style/myBackgroundBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/round_corner"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:elevation="5dp"
                 android:padding="10dp">
 
@@ -182,10 +180,9 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/corner_step"
+                    style="@style/myMicroBox"
                     android:padding="3dp"
                     android:text="Шаг:2"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.005"
@@ -194,7 +191,7 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
-                    style="@style/NormalBoldTitle"
+                    style="@style/myBoldTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Зарегистрироваться"
@@ -207,7 +204,7 @@
 
                 <TextView
                     android:id="@+id/textView7"
-                    style="@style/mainDescriptionStep"
+                    style="@style/myNormalTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
@@ -218,7 +215,7 @@
 
                 <Button
                     android:id="@+id/goToOnlineRegistration"
-                    style="@style/ButtonYellow"
+                    style="@style/myYellowButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Зарегистрироваться"
