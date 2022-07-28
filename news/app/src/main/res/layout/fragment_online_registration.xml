@@ -7,7 +7,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     android:orientation="vertical"
     tools:context=".ui.online_registration.OnlineRegistrationFragment">
 
@@ -24,14 +23,14 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
         <TextView
-            style="@style/NormalBoldTitle"
+            style="@style/myBoldTitle"
             android:layout_marginBottom="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Адрес фактического проживания " />
 
         <TextView
-            style="@style/MicroText2"
+            style="@style/myMicroTextTwo"
             android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,21 +45,18 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/MicroText"
+                style="@style/myMicroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Область" />
 
 
-            <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            <Spinner
                 android:id="@+id/regionsSpinner"
-                app:smsp_itemSize="16dp"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:smsp_itemColor="@color/black"
-                app:smsp_hint=""
-                app:smsp_itemListColor="@color/black"
-                app:smsp_selectedItemListColor="@color/anotherGray"
+                app:backgroundTint="@color/anotherGray"
                 app:smsp_underlineColor="@color/anotherBlack"/>
 
 
@@ -73,20 +69,17 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/MicroText"
+                style="@style/myMicroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Район" />
 
-            <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            <Spinner
                 android:id="@+id/districtSpinner"
-                app:smsp_itemSize="16dp"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:smsp_itemColor="@color/black"
-                app:smsp_hint=""
-                app:smsp_itemListColor="@color/black"
-                app:smsp_selectedItemListColor="@color/anotherGray"
+                app:backgroundTint="@color/anotherGray"
                 app:smsp_underlineColor="@color/anotherBlack"/>
         </LinearLayout>
 
@@ -97,20 +90,17 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/MicroText"
+                style="@style/myMicroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Город/Село" />
 
-            <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            <Spinner
                 android:id="@+id/citySpinner"
-                app:smsp_itemSize="16dp"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:smsp_itemColor="@color/black"
-                app:smsp_hint=""
-                app:smsp_itemListColor="@color/black"
-                app:smsp_selectedItemListColor="@color/anotherGray"
+                app:backgroundTint="@color/anotherGray"
                 app:smsp_underlineColor="@color/anotherBlack"/>
         </LinearLayout>
 
@@ -121,7 +111,7 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/MicroText"
+                style="@style/myMicroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Микрорайон/ улица:" />
@@ -144,14 +134,14 @@
                 android:layout_marginEnd="5dp">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Дом/корпус:" />
 
                 <EditText
                     android:id="@+id/houseET"
-                    style="@style/spinner"
+                    style="@style/myEditText"
                     android:inputType="number" />
             </LinearLayout>
 
@@ -164,7 +154,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/MicroText"
+                    style="@style/myMicroText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Квартира/комната:" />
@@ -172,7 +162,7 @@
 
                 <EditText
                     android:id="@+id/roomET"
-                    style="@style/spinner"/>
+                    style="@style/myEditText"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -180,7 +170,7 @@
 
     <Button
         android:id="@+id/btnConfirm"
-        style="@style/ButtonYellow"
+        style="@style/myYellowButton"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10sp"
         android:layout_marginEnd="10sp"

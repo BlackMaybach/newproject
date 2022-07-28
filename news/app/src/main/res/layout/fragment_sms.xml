@@ -12,8 +12,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.registration.SmsFragment"
-    android:orientation="vertical"
-    android:background="@color/background">
+    android:orientation="vertical">
 
     <include
         android:id="@+id/toolbar2"
@@ -29,7 +28,7 @@
 
         <TextView
             android:id="@+id/tw"
-            style="@style/BigBoldTitle"
+            style="@style/myBigBoldTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15sp"
@@ -37,7 +36,7 @@
 
         <TextView
             android:id="@+id/tw2"
-            style="@style/BigBoldTitle"
+            style="@style/myBigBoldTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tw"
@@ -52,7 +51,7 @@
         android:layout_gravity="center">
 
         <TextView
-            style="@style/TinyText"
+            style="@style/myMiddleTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Мы выслали вам на указанный номер телефона СМС сообщение с кодом подтверждения авторизации." />
@@ -66,30 +65,31 @@
 
         <TextView
             android:id="@+id/tw3"
-            style="@style/MicroText"
+            style="@style/myMicroText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Код подтверждения из СМС" />
 
         <EditText
             android:id="@+id/smsCodeET"
-            style="@style/PhoneET"
+            style="@style/myEditText"
             android:layout_below="@+id/tw3"
             android:hint="******"
             android:inputType="number"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:maxLength="6"/>
 
     </RelativeLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="350sp"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:layout_gravity="center">
 
 
         <TextView
             android:id="@+id/textView"
-            style="@style/MicroText"
+            style="@style/myMicroText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Можно выслать снова через:"
@@ -100,7 +100,7 @@
 
         <TextView
             android:id="@+id/countTime"
-            style="@style/MicroText"
+            style="@style/myMicroText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10 сек"
@@ -112,7 +112,7 @@
 
         <TextView
             android:id="@+id/startCount"
-            style="@style/MicroText"
+            style="@style/myMicroText"
             android:paddingStart="1sp"
             android:paddingEnd="1sp"
             android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
         android:layout_gravity="center">
         <Button
             android:id="@+id/btnToPasswordFragment"
-            style="@style/ButtonYellow"
+            style="@style/myYellowButton"
             android:text="Продолжить"/>
     </LinearLayout>
 

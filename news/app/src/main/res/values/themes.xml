@@ -177,12 +177,28 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <!---->
+
+    <style name="myMicroTextTwo">
+        <item name="android:textColor">@color/anotherGray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!---->
+
+    <style name="myCodeNumber">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/anotherBlack</item>
+    </style>
+
 
 
     <style name="Theme.Newproject.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+
 
     <style name="Theme.Newproject.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

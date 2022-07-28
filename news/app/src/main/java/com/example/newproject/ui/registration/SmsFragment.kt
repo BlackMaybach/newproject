@@ -35,13 +35,15 @@ class SmsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val mMaxLength = 6
 
         binding.btnToPasswordFragment.setOnClickListener {
             val password = binding.smsCodeET.text.toString()
             if (password.isNullOrEmpty()) {
                 Toast.makeText(context, "Введите код", Toast.LENGTH_LONG).show()
-            } else {
+            } else if (password.length < mMaxLength) {
+                Toast.makeText(context, "Код состоит из 6 значений", Toast.LENGTH_LONG).show()
+            }else {
                 getCode(password)
             }
         }
@@ -56,7 +58,7 @@ class SmsFragment : Fragment() {
             password
         )
 
-        // отправляем номер во RegistrationViewModel
+        // отправляем номер в RegistrationViewModel
         viewModel.getSmsCodeFragment(account)
 
         viewModel.smsCode.observe(viewLifecycleOwner) {

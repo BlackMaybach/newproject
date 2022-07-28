@@ -28,7 +28,11 @@
         android:id="@+id/calculatorFragment"
         android:name="com.example.newproject.ui.calculator.CalculatorFragment"
         android:label="fragment_calculator"
-        tools:layout="@layout/fragment_calculator" />
+        tools:layout="@layout/fragment_calculator" >
+        <action
+            android:id="@+id/action_calculatorFragment_to_showCalculationFragment"
+            app:destination="@id/showCalculationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.newproject.ui.profile.ProfileFragment"
@@ -123,4 +127,13 @@
         android:name="com.example.newproject.ui.profile.ProfileFormFragment"
         android:label="fragment_profile_form"
         tools:layout="@layout/fragment_profile_form" />
+    <fragment
+        android:id="@+id/showCalculationFragment"
+        android:name="com.example.newproject.ui.calculator.ShowCalculationFragment"
+        android:label="fragment_show_calculation"
+        tools:layout="@layout/fragment_show_calculation" >
+        <argument
+            android:name="calculationInfo"
+            app:argType="com.example.newproject.ui.api.models.creditCalculator.GetCalculation" />
+    </fragment>
 </navigation>

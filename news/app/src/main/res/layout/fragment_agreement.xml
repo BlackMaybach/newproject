@@ -14,8 +14,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background"
-
         tools:context=".ui.registration.AgreementFragment">
 
         <include
@@ -40,13 +38,13 @@
                 tools:layout_editor_absoluteX="10dp">
 
                 <TextView
-                    style="@style/NormalBoldTitle"
+                    style="@style/myBoldTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="СОГЛАСИЕ" />
 
                 <TextView
-                    style="@style/NormalTitle"
+                    style="@style/myNormalTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10sp"
@@ -54,7 +52,7 @@
 
                 <TextView
                     android:id="@+id/agreementText"
-                    style="@style/NormalTitle"
+                    style="@style/myNormalTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Я, согласен(а), что:
@@ -80,7 +78,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        style="@style/NormalTitle"
+                        style="@style/myNormalTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Открыть сайт Компании:" />
@@ -102,7 +100,7 @@
 
         <Button
             android:id="@+id/btnConfirm"
-            style="@style/ButtonYellow"
+            style="@style/myYellowButton"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="10sp"
             android:layout_marginEnd="10sp"

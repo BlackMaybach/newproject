@@ -7,6 +7,8 @@ import com.example.newproject.ui.api.models.AccountPassword
 import com.example.newproject.ui.api.models.AccountRegister
 import com.example.newproject.ui.api.models.LoginResponse
 import com.example.newproject.ui.api.models.UserInfo.userInfo
+import com.example.newproject.ui.api.models.creditCalculator.GetCalculation
+import com.example.newproject.ui.api.models.creditCalculator.PostCalculation
 import com.example.newproject.ui.api.models.creditReferences.CreditReferences
 import com.example.newproject.ui.api.models.references.getReferences
 import retrofit2.Response
@@ -45,6 +47,10 @@ class Repository {
 
     suspend fun takeText() :Response<String> {
         return api.getAgreementText()
+    }
+
+    suspend fun sendCalculation(calculation: PostCalculation): Response<GetCalculation> {
+        return api.getCalculationInfo(calculation)
     }
 
 }

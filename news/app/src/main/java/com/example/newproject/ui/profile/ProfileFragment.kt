@@ -39,6 +39,7 @@ class ProfileFragment : Fragment() {
 
         binding.darkTheme.setOnClickListener {
             AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+            
 
         }
 
