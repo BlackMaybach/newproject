@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.newproject.repository.Repository
+import com.example.newproject.ui.api.models.AccountPassword
 import com.example.newproject.ui.api.models.UserInfo.userInfo
 import com.example.newproject.utils.Resource
 import kotlinx.coroutines.Dispatchers
@@ -14,6 +15,8 @@ class ProfileViewModel : ViewModel() {
     val repository = Repository()
 
     var infoUser: MutableLiveData<Resource<userInfo>> = MutableLiveData()
+
+    var pass : MutableLiveData<Resource<String>> = MutableLiveData()
 
     fun getInfoUser() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -29,4 +32,20 @@ class ProfileViewModel : ViewModel() {
         }
 
     }
+
+
+    fun refreshPassword(password: AccountPassword) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.sendPassword(password).let {
+                // code 200
+                if(it.isSuccessful) {
+                    pass.postValue(Resource.success(it.body()))
+                } else {
+                    pass.postValue(Resource.error("${it.errorBody()?.string()}", null))
+                }
+            }
+        }
+    }
+
+
 }

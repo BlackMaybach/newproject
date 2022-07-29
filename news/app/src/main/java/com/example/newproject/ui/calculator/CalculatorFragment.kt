@@ -72,19 +72,48 @@ class CalculatorFragment : Fragment() {
 
         ///       Отправка данных в функцию     ///
         binding.btnSend.setOnClickListener {
-            val loanAmount = binding.loanAmount.text.toString().toInt()
-            val period = binding.period.text.toString().toInt()
-            val percentsBaseType = binding.percentsBaseType.text.toString().toInt()
+            val loanAmount = binding.loanAmount.text.toString()
+            val period = binding.period.text.toString()
+            val percentsBaseType = binding.percentsBaseType.text.toString()
             val firstPaymentDate = binding.firstPaymentDate.text.toString()
-            val discountPeriod = binding.discountPeriod.text.toString().toInt()
+            val discountPeriod = binding.discountPeriod.text.toString()
 
-            Toast.makeText(
-                requireContext(),
-                "$loanAmount $period $percentsBaseType $firstPaymentDate $discountPeriod",
-                Toast.LENGTH_SHORT
-            ).show()
-
-            sendCalculation(loanAmount, period, percentsBaseType, firstPaymentDate, discountPeriod)
+            if (loanAmount.isEmpty()) {
+                Toast.makeText(requireContext(), "Заполните поле сумма кредита", Toast.LENGTH_SHORT)
+                    .show()
+            } else if (period.isEmpty()) {
+                Toast.makeText(requireContext(), "Заполните поле срок кредита", Toast.LENGTH_SHORT)
+                    .show()
+            } else if (percentsBaseType.isEmpty()) {
+                Toast.makeText(
+                    requireContext(),
+                    "Заполните поле процентная ставка",
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
+            } else if (firstPaymentDate.isEmpty()) {
+                Toast.makeText(
+                    requireContext(),
+                    "Заполните поле дата первой выплаты",
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
+            } else if (discountPeriod.isEmpty()) {
+                Toast.makeText(
+                    requireContext(),
+                    "Заполните поле льготный период по осн. долгу",
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
+            } else {
+                sendCalculation(
+                    loanAmount.toInt(),
+                    period.toInt(),
+                    percentsBaseType.toInt(),
+                    firstPaymentDate,
+                    discountPeriod.toInt()
+                )
+            }
         }
 
 
@@ -147,7 +176,11 @@ class CalculatorFragment : Fragment() {
                 }
                 Status.SUCCESS -> {
                     binding.btnSend.isEnabled = true
-                    findNavController().navigate(CalculatorFragmentDirections.actionCalculatorFragmentToShowCalculationFragment(it.data!!))
+                    findNavController().navigate(
+                        CalculatorFragmentDirections.actionCalculatorFragmentToShowCalculationFragment(
+                            it.data!!
+                        )
+                    )
                 }
 
                 Status.ERROR -> {

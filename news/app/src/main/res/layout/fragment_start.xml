@@ -109,7 +109,7 @@
             android:id="@+id/regFragment"
             android:layout_width="match_parent"
             android:layout_height="60sp"
-            app:strokeColor="#B88A1E"
+            app:strokeColor="@color/yellow"
             android:text="ЗАРЕГИСТРИРОВАТЬСЯ"
             android:textColor="@color/yellow"
             android:textSize="15sp"

@@ -132,6 +132,21 @@
         <item name="android:background">@drawable/round_corner_tw</item>
     </style>
 
+
+    <!---->
+
+    <style name="myFormChangePassword">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/anotherBlack</item>
+        <item name="android:layout_height">50sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:padding">10sp</item>
+        <item name="android:background">@drawable/round_corner_tw</item>
+
+    </style>
+
     <!---->
 
     <style name="myEditText">
@@ -191,6 +206,11 @@
         <item name="android:textColor">@color/anotherBlack</item>
     </style>
 
+    <!---->
+
+    <style name="myBottomSheetPass">
+        <item name="android:background">@drawable/round_change_pass</item>
+    </style>
 
 
     <style name="Theme.Newproject.NoActionBar">

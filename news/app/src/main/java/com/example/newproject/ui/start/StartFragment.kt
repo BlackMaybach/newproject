@@ -30,9 +30,9 @@ class StartFragment : Fragment() {
         binding.toolbar1.toolbarExitButton.gone()
         val imageSlider = binding.imageSlider
         val imageList = ArrayList<SlideModel>()
-        imageList.add(SlideModel(R.drawable.one))
-        imageList.add(SlideModel(R.drawable.two))
-        imageSlider.setImageList(imageList, ScaleTypes.FIT)
+        imageList.add(SlideModel(R.drawable.carousel))
+        imageList.add(SlideModel(R.drawable.carouseltwo))
+        imageSlider.setImageList(imageList, ScaleTypes.CENTER_INSIDE) //FIT
         imageSlider.stopSliding()
         return binding.root
     }

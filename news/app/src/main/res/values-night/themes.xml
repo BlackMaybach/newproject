@@ -128,6 +128,19 @@
 
     <!---->
 
+    <style name="myFormChangePassword">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/anotherGrayTwo</item>
+        <item name="android:layout_height">50sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:padding">10sp</item>
+        <item name="android:background">@drawable/round_corner_dark</item>
+    </style>
+
+    <!---->
+
     <style name="myEditText">
         <item name="android:textSize">16sp</item>
         <item name="android:backgroundTint">@color/anotherGray</item>
@@ -185,5 +198,10 @@
         <item name="android:textColor">@color/anotherGray</item>
     </style>
 
+    <!---->
+
+    <style name="myBottomSheetPass">
+        <item name="android:background">@drawable/round_change_pass_night</item>
+    </style>
 
 </resources>

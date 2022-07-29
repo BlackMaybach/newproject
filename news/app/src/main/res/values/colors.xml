@@ -19,4 +19,5 @@
     <color name="green">#2F9C2C</color>
     <color name="anotherGrayTW">#ECECEC</color>
     <color name="anotherGrayTwo">#E2E2E2</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>
