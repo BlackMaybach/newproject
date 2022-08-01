@@ -31,7 +31,6 @@ class ProfileFragment : Fragment() {
     private val viewModel by lazy { ProfileViewModel() }
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,7 +50,7 @@ class ProfileFragment : Fragment() {
         }
 
         binding.darkTheme.setOnClickListener {
-          AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+            AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
 
 
         }
@@ -69,29 +68,27 @@ class ProfileFragment : Fragment() {
             buttonSend.setOnClickListener {
                 val old = view.findViewById<EditText>(R.id.oldChangePassword).text.toString()
                 val new = view.findViewById<EditText>(R.id.newChangePassword).text.toString()
-                val newConfirm = view.findViewById<EditText>(R.id.newChangePasswordConfirm).text.toString()
+                val newConfirm =
+                    view.findViewById<EditText>(R.id.newChangePasswordConfirm).text.toString()
                 val passAlert = view.findViewById<TextView>(R.id.passAlert)
 
 
-                if(old.isNullOrEmpty()) {
+                if (old.isNullOrEmpty()) {
                     passAlert.show()
                     passAlert.text = "Заполните все поля"
-                } else if(new.isEmpty()) {
+                } else if (new.isEmpty()) {
                     passAlert.show()
                     passAlert.text = "Заполните все поля"
-                }   else if(newConfirm.isEmpty()) {
+                } else if (newConfirm.isEmpty()) {
                     passAlert.show()
                     passAlert.text = "Заполните все поля"
-                }
-                else if(new != newConfirm) {
+                } else if (new != newConfirm) {
                     passAlert.show()
                     passAlert.text = "Пароли не совпадают"
-                }
-                else {
+                } else {
                     dialog.dismiss()
-                    sendPassword(old,new,newConfirm)
+                    sendPassword(old, new, newConfirm)
                 }
-
 
 
             }
@@ -110,8 +107,8 @@ class ProfileFragment : Fragment() {
         }
 
 
-
-        val nightModeFlags = view.context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        val nightModeFlags =
+            view.context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
 
         when (nightModeFlags) {
             Configuration.UI_MODE_NIGHT_YES -> {
@@ -182,5 +179,6 @@ class ProfileFragment : Fragment() {
         }
 
     }
+
 
 }

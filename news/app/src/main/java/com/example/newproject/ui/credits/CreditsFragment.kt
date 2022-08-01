@@ -1,19 +1,13 @@
 package com.example.newproject.ui.credits
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Toast
-import com.example.newproject.R
+import androidx.fragment.app.Fragment
+import com.example.newproject.customView.ViewPageAdapter
 import com.example.newproject.databinding.FragmentCreditsBinding
-import com.example.newproject.utils.Status
 import com.example.newproject.utils.gone
-import com.example.newproject.utils.showToast
 
 
 class CreditsFragment : Fragment() {
@@ -33,23 +27,18 @@ class CreditsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        viewModel.getCreditReferences()
-//
-//        viewModel.references.observe(viewLifecycleOwner) {
-//            when(it.status) {
-//                Status.SUCCESS -> {
-//                    var distributionChannel = it.data?.payOutTypes
-//                    var providers = it.data?.providers
-//                    distributionChannelSpinner()
-//                }
-//
-//                Status.ERROR -> {
-//                    requireContext().showToast(it.message)
-//                }
-//            }
-//        }
-    }
 
+        var viewPager = binding.viewPager
+        var tabLayout = binding.tabLayout
+        val adapter = ViewPageAdapter(childFragmentManager)
+        adapter.addFragment(CreditMainFragment(), "Текущие")
+        adapter.addFragment(CreditHistoryFragment(), "История")
+
+        viewPager.adapter = adapter
+        tabLayout.setupWithViewPager(viewPager)
+
+
+    }
 
 
 }

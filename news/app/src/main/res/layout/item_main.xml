@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        style="@style/myBackgroundBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Остаток основного долга:" />
+
+            <TextView
+                android:id="@+id/test_debt"
+                style="@style/myNormalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="date"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Начисленные проценты:" />
+
+            <TextView
+                android:id="@+id/test_percent"
+                style="@style/myNormalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="amount"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сумма начисленных штрафов:" />
+
+            <TextView
+                android:id="@+id/test_sum"
+                style="@style/myNormalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="rate"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

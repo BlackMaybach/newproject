@@ -14,6 +14,8 @@ import com.example.newproject.ui.api.models.AccountLogin
 import com.example.newproject.ui.registration.RegistrationFragmentDirections
 import com.example.newproject.ui.registration.RegistrationViewModel
 import com.example.newproject.utils.Status
+import com.example.newproject.utils.gone
+import com.example.newproject.utils.show
 import com.example.newproject.utils.showToast
 
 

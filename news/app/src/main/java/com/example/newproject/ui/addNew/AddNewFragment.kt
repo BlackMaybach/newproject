@@ -42,6 +42,9 @@ class AddNewFragment : Fragment() {
 
         viewModel.references.observe(viewLifecycleOwner) {
             when (it.status) {
+
+
+
                 Status.SUCCESS -> {
                     val payOutTypes = it.data?.payOutTypes as List<PayOutType>
                     val providers = it.data.providers
@@ -100,6 +103,7 @@ class AddNewFragment : Fragment() {
                         }
                     }
                     sendNewCredit()
+
                 }
                 Status.ERROR -> {
                     requireContext().showToast(it.message)

@@ -11,6 +11,8 @@ import com.example.newproject.ui.api.models.references.Area
 import com.example.newproject.ui.api.models.references.City
 import com.example.newproject.ui.api.models.references.Region
 import com.example.newproject.utils.Status
+import com.example.newproject.utils.gone
+import com.example.newproject.utils.show
 import com.example.newproject.utils.showToast
 
 
@@ -44,11 +46,15 @@ class OnlineRegistrationFragment : Fragment() {
 
         viewModel.references.observe(viewLifecycleOwner) {
             when (it.status) {
+
+                Status.LOADING -> binding.progressBar.show()
+
                 Status.SUCCESS -> {
                     val regions = it.data?.regions!!
                     val areas = it.data.areas
                     val city = it.data.cities
                     regionsSpinner(regions, areas, city)
+                    binding.progressBar.gone()
                 }
                 Status.ERROR -> {
                     requireContext().showToast(it.message)
