@@ -6,43 +6,6 @@
     app:startDestination="@id/startFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.newproject.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_onlineRegistrationFragment"
-            app:destination="@id/onlineRegistrationFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/creditsFragment"
-        android:name="com.example.newproject.ui.credits.CreditsFragment"
-        android:label="fragment_credits"
-        tools:layout="@layout/fragment_credits" />
-    <fragment
-        android:id="@+id/addNewFragment"
-        android:name="com.example.newproject.ui.addNew.AddNewFragment"
-        android:label="fragment_add_new"
-        tools:layout="@layout/fragment_add_new" />
-    <fragment
-        android:id="@+id/calculatorFragment"
-        android:name="com.example.newproject.ui.calculator.CalculatorFragment"
-        android:label="fragment_calculator"
-        tools:layout="@layout/fragment_calculator" >
-        <action
-            android:id="@+id/action_calculatorFragment_to_showCalculationFragment"
-            app:destination="@id/showCalculationFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.newproject.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profileFragment_to_profileFormFragment"
-            app:destination="@id/profileFormFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/startFragment"
         android:name="com.example.newproject.ui.start.StartFragment"
         android:label="fragment_start"
@@ -58,13 +21,7 @@
         android:id="@+id/loginFragment"
         android:name="com.example.newproject.ui.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/startFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+        tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.example.newproject.ui.registration.RegistrationFragment"
@@ -116,24 +73,5 @@
             app:destination="@id/startFragment"
             app:popUpTo="@id/startFragment"
             app:popUpToInclusive="true" />
-    </fragment>
-    <fragment
-        android:id="@+id/onlineRegistrationFragment"
-        android:name="com.example.newproject.ui.online_registration.OnlineRegistrationFragment"
-        android:label="fragment_online_registration"
-        tools:layout="@layout/fragment_online_registration" />
-    <fragment
-        android:id="@+id/profileFormFragment"
-        android:name="com.example.newproject.ui.profile.ProfileFormFragment"
-        android:label="fragment_profile_form"
-        tools:layout="@layout/fragment_profile_form" />
-    <fragment
-        android:id="@+id/showCalculationFragment"
-        android:name="com.example.newproject.ui.calculator.ShowCalculationFragment"
-        android:label="fragment_show_calculation"
-        tools:layout="@layout/fragment_show_calculation" >
-        <argument
-            android:name="calculationInfo"
-            app:argType="com.example.newproject.ui.api.models.creditCalculator.GetCalculation" />
     </fragment>
 </navigation>

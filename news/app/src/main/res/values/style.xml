@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
+
+
     <style name="BigBoldTitle">
         <item name="android:textColor">@color/anotherBlack</item>
         <item name="android:textStyle">bold</item>

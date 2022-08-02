@@ -10,12 +10,12 @@ import androidx.navigation.Navigation
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.newproject.databinding.ActivityLoginBinding
 import com.example.newproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
         setupBottomNav()
     }
 
-    private fun setupBottomNav() {
-        val navController = findNavController(R.id.fragment_container_home)
+        private fun setupBottomNav() {
+        val navController = findNavController(R.id.fragment_container_main)
         binding.bottomNavigation.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {

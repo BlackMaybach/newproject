@@ -42,25 +42,6 @@ object RetrofitObject {
             .build()
     }
 
-
-//    private var logHangler: ((String) -> (Unit))? = null
-//
-//    fun getClientBuilderWithAuth(): OkHttpClient.Builder {
-//
-//        val builder = OkHttpClient.Builder()
-//        val logHandler = logHangler
-//        if (logHandler != null)
-//            builder.addInterceptor {
-//                val request = it.request()
-//                logHandler("${request.method} ${request.url}")
-//                it.proceed(request)
-//
-//            }
-//
-//        return builder
-//
-//    }
-
     private fun getUnsafeOkHttpClient(): OkHttpClient.Builder {
         try {
             // Create a trust manager that does not validate certificate chains

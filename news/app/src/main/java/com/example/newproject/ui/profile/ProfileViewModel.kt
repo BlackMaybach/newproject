@@ -16,7 +16,7 @@ class ProfileViewModel : ViewModel() {
 
     var infoUser: MutableLiveData<Resource<userInfo>> = MutableLiveData()
 
-    var pass : MutableLiveData<Resource<String>> = MutableLiveData()
+    var passProfile : MutableLiveData<Resource<String>> = MutableLiveData()
 
     fun getInfoUser() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -35,13 +35,14 @@ class ProfileViewModel : ViewModel() {
 
 
     fun refreshPassword(password: AccountPassword) {
+        passProfile.postValue(Resource.loading(null))
         viewModelScope.launch(Dispatchers.IO) {
             repository.sendPassword(password).let {
                 // code 200
                 if(it.isSuccessful) {
-                    pass.postValue(Resource.success(it.body()))
+                    passProfile.postValue(Resource.success(it.body()))
                 } else {
-                    pass.postValue(Resource.error("${it.errorBody()?.string()}", null))
+                    passProfile.postValue(Resource.error("${it.errorBody()?.string()}", null))
                 }
             }
         }

@@ -1,5 +1,6 @@
 package com.example.newproject.ui.calculator
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,12 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.fragment.findNavController
+import com.example.newproject.R
 import com.example.newproject.databinding.FragmentCalculatorBinding
 import com.example.newproject.ui.api.models.creditCalculator.PostCalculation
 import com.example.newproject.utils.PaymentType
 import com.example.newproject.utils.Status
 import com.example.newproject.utils.gone
 import com.example.newproject.utils.showToast
+import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -27,7 +30,6 @@ class CalculatorFragment : Fragment() {
 
     private var idEnum = 0
 
-    var cal: Calendar = Calendar.getInstance()
 
     private var dateValue: TextView? = null
 
@@ -41,34 +43,45 @@ class CalculatorFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SimpleDateFormat")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         dateValue = binding.firstPaymentDate
 
-        val dateSetListener = object : DatePickerDialog.OnDateSetListener {
-            override fun onDateSet(
-                view: DatePicker, year: Int, monthOfYear: Int,
-                dayOfMonth: Int
-            ) {
-                cal.set(Calendar.YEAR, year)
-                cal.set(Calendar.MONTH, monthOfYear)
-                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                updateDateInView()
+        // when floationg acition button is clicked
+        binding.firstPaymentDate.setOnClickListener {
+            // Initiation date picker with
+            // MaterialDatePicker.Builder.datePicker()
+            // and building it using build()
+            val datePicker = MaterialDatePicker.Builder.datePicker().build()
+
+            datePicker.show(parentFragmentManager, "DatePicker")
+            // Setting up the event for when ok is clicked
+            datePicker.addOnPositiveButtonClickListener {
+                // formatting date in dd-mm-yyyy format.
+                val dateFormatter = SimpleDateFormat("yyyy-MM-dd")
+                val date = dateFormatter.format(Date(it))
+
+                dateValue!!.text = date
+                Toast.makeText(requireContext(), "$date is selected", Toast.LENGTH_LONG).show()
+
+            }
+
+            // Setting up the event for when cancelled is clicked
+            datePicker.addOnNegativeButtonClickListener {
+                Toast.makeText(
+                    requireContext(),
+                    "${datePicker.headerText} is cancelled",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+
+            // Setting up the event for when back button is pressed
+            datePicker.addOnCancelListener {
+                Toast.makeText(requireContext(), "Date Picker Cancelled", Toast.LENGTH_LONG).show()
             }
         }
 
-        ///         DatePickerDialog        ///
-        binding.firstPaymentDate.setOnClickListener {
-            DatePickerDialog(
-                requireContext(),
-                dateSetListener,
-                // set DatePickerDialog to point to today's date when it loads up
-                cal.get(Calendar.YEAR),
-                cal.get(Calendar.MONTH),
-                cal.get(Calendar.DAY_OF_MONTH)
-            ).show()
-        }
 
         ///       Отправка данных в функцию     ///
         binding.btnSend.setOnClickListener {
@@ -189,12 +202,6 @@ class CalculatorFragment : Fragment() {
                 }
             }
         }
-    }
-
-    private fun updateDateInView() {
-        val myFormat = "yyyy-MM-dd" // mention the format you need
-        val sdf = SimpleDateFormat(myFormat, Locale.US)
-        dateValue!!.text = sdf.format(cal.time)
     }
 
 

@@ -34,7 +34,7 @@ class ShowCalculationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val array = args.calculationInfo
+        val array = args.calculation
         val recycler = binding.recyclerCalculation
         recycler.layoutManager = LinearLayoutManager(requireContext())
 

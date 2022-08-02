@@ -11,5 +11,12 @@ class SharedPreference(context: Context) {
         get() = preference.getString("TOKEN", null)
         set(value) = preference.edit().putString("TOKEN", value).apply()
 
+    fun clear() {
+        preference.edit().clear().apply()
+    }
+
+
+
+
 
 }

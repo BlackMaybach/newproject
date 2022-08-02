@@ -1,6 +1,7 @@
 package com.example.newproject.ui.profile
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.text.Editable
@@ -16,6 +17,9 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.newproject.App
+import com.example.newproject.LoginActivity
+import com.example.newproject.MainActivity
 import com.example.newproject.R
 import com.example.newproject.databinding.FragmentProfileBinding
 import com.example.newproject.ui.api.models.AccountPassword
@@ -29,7 +33,7 @@ class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
 
     private val viewModel by lazy { ProfileViewModel() }
-
+    private val shared_pref = SharedPreference(App.instance.applicationContext)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +41,13 @@ class ProfileFragment : Fragment() {
     ): View? {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         binding.toolbar1.textViewStart.text = "Настройки приложения"
+        binding.toolbar1.toolbarExitButton.setOnClickListener {
+            shared_pref.clear()
+            activity?.let {
+                val intent = Intent(it, LoginActivity::class.java)
+                it.startActivity(intent)
+            }
+        }
         return binding.root
     }
 
@@ -45,14 +56,21 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        binding.exit.setOnClickListener {
+            shared_pref.clear()
+            activity?.let {
+                val intent = Intent(it, LoginActivity::class.java)
+                it.startActivity(intent)
+                it.finish()
+            }
+        }
+
         binding.btnToForm.setOnClickListener {
             findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToProfileFormFragment())
         }
 
         binding.darkTheme.setOnClickListener {
             AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
-
-
         }
 
         binding.lightTheme.setOnClickListener {
@@ -163,7 +181,7 @@ class ProfileFragment : Fragment() {
         )
 
         viewModel.refreshPassword(accountPassword)
-        viewModel.pass.observe(viewLifecycleOwner) {
+        viewModel.passProfile.observe(viewLifecycleOwner) {
             when (it.status) {
                 Status.LOADING -> {
 

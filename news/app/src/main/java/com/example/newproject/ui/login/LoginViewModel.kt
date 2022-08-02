@@ -24,6 +24,7 @@ class LoginViewModel : ViewModel() {
                 // code 200
                 if(it.isSuccessful && it.code() == 200) {
                     loginData.postValue(Resource.success(it.body()))
+                    shared_pref.clear()
                     shared_pref.userToken = it.body()?.accessToken
                 } else {
                     loginData.postValue(Resource.error("${it.errorBody()?.string()}", null))

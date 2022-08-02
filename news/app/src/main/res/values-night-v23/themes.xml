@@ -16,5 +16,25 @@
         <item name="android:windowLightStatusBar">false</item>
         <!-- Customize your theme here. -->
         <item name="android:colorBackground">@color/anotherBlack</item>
+
+        <item name="materialCalendarTheme">@style/ThemeOverlay.App.DatePicker</item>
+
+    </style>
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
+        <!-- Customize text field of the text input mode. -->
+
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">5dp</item>
     </style>
 </resources>

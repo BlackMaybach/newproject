@@ -1,6 +1,7 @@
 package com.example.newproject.ui.registration
 
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -26,7 +27,9 @@ class SmsViewModel: ViewModel() {
                 // code 200
                 if(it.isSuccessful) {
                     smsCode.postValue(Resource.success(it.body()))
+                    shared_pref.clear()
                     shared_pref.userToken = it.body()?.accessToken
+                    Log.e("TOKEN",it.body()?.accessToken!!)
                 } else {
                     smsCode.postValue(Resource.error("${it.errorBody()?.string()}", null))
                 }
