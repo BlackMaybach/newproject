@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_profileFragment_to_profileFormFragment"
             app:destination="@id/profileFormFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_profilePhotoFragment"
+            app:destination="@id/profilePhotoFragment" />
     </fragment>
     <fragment
         android:id="@+id/onlineRegistrationFragment"
@@ -60,4 +63,9 @@
         android:name="com.example.newproject.ui.profile.ProfileFormFragment"
         android:label="fragment_profile_form"
         tools:layout="@layout/fragment_profile_form" />
+    <fragment
+        android:id="@+id/profilePhotoFragment"
+        android:name="com.example.newproject.ui.profile.ProfilePhotoFragment"
+        android:label="fragment_profile_photo"
+        tools:layout="@layout/fragment_profile_photo" />
 </navigation>

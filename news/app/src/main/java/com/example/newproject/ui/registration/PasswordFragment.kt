@@ -9,9 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.newproject.R
 import com.example.newproject.databinding.FragmentPasswordBinding
-import com.example.newproject.ui.api.models.AccountLogin
 import com.example.newproject.ui.api.models.AccountPassword
 import com.example.newproject.utils.Status
 import com.example.newproject.utils.showToast

@@ -2,6 +2,7 @@ package com.example.newproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -12,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.newproject.databinding.ActivityLoginBinding
 import com.example.newproject.databinding.ActivityMainBinding
+import com.example.newproject.ui.profile.ProfilePhotoFragment
 
 class MainActivity : AppCompatActivity() {
 

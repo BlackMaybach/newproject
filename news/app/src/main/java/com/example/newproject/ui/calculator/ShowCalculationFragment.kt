@@ -9,7 +9,6 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newproject.customView.CalculationAdapter
 import com.example.newproject.databinding.FragmentShowCalculationBinding
-import com.example.newproject.ui.registration.RegistrationFragmentArgs
 
 
 class ShowCalculationFragment : Fragment() {

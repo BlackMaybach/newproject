@@ -28,7 +28,7 @@ class StartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentStartBinding.inflate(inflater,container,false)
+        binding = FragmentStartBinding.inflate(inflater, container, false)
 
         binding.toolbar1.toolbarExitButton.gone()
         val imageSlider = binding.imageSlider
@@ -65,8 +65,4 @@ class StartFragment : Fragment() {
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        return binding = null
-    }
 }

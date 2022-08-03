@@ -1,6 +1,5 @@
 package com.example.newproject.repository
 
-import com.example.newproject.App
 import com.example.newproject.ui.api.RetrofitObject
 import com.example.newproject.ui.api.models.AccountLogin
 import com.example.newproject.ui.api.models.AccountPassword
@@ -10,6 +9,7 @@ import com.example.newproject.ui.api.models.UserInfo.userInfo
 import com.example.newproject.ui.api.models.creditCalculator.GetCalculation
 import com.example.newproject.ui.api.models.creditCalculator.PostCalculation
 import com.example.newproject.ui.api.models.creditReferences.CreditReferences
+import com.example.newproject.ui.api.models.photo.PhotosResponse
 import com.example.newproject.ui.api.models.references.getReferences
 import retrofit2.Response
 
@@ -47,6 +47,14 @@ class Repository {
 
     suspend fun takeText() :Response<String> {
         return api.getAgreementText()
+    }
+
+    suspend fun getPhotosIds(): Response<PhotosResponse> {
+        return api.getIdImage()
+    }
+
+    suspend fun getImageFromId(id: Int): Response<PhotosResponse> {
+        return api.getPhotoById(id)
     }
 
     suspend fun sendCalculation(calculation: PostCalculation): Response<GetCalculation> {

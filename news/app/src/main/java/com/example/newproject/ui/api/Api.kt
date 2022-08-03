@@ -8,6 +8,7 @@ import com.example.newproject.ui.api.models.UserInfo.userInfo
 import com.example.newproject.ui.api.models.creditCalculator.GetCalculation
 import com.example.newproject.ui.api.models.creditCalculator.PostCalculation
 import com.example.newproject.ui.api.models.creditReferences.CreditReferences
+import com.example.newproject.ui.api.models.photo.PhotosResponse
 import com.example.newproject.ui.api.models.references.getReferences
 import retrofit2.Response
 import retrofit2.http.*
@@ -46,6 +47,16 @@ interface Api {
     //отправка рассчета калькулятор
     @POST("/LoanCalculator/GetLoanSchedule")
     suspend fun getCalculationInfo(@Body postCalculation: PostCalculation) : Response<GetCalculation>
+
+    // получить айди картинки
+    @GET("/Image/GetImageIdsb")
+    suspend fun getIdImage() : Response<PhotosResponse>
+
+    // получить артинку
+    @GET("/Image/GetDocument")
+    suspend fun getPhotoById(
+        @Query("documentId") id : Int
+    ) : Response<PhotosResponse>
 
     //соглашение
     @GET("/Account/GetAgreement")

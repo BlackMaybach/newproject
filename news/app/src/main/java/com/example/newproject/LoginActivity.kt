@@ -21,25 +21,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        setupBottomNav()
     }
 
-//    private fun setupBottomNav() {
-//        val navController = findNavController(R.id.fragment_container_home)
-//        binding.bottomNavigation.setupWithNavController(navController)
-//        navController.addOnDestinationChangedListener { _, destination, _ ->
-//            when (destination.id) {
-//                R.id.homeFragment -> showBottomNav()
-//                R.id.creditsFragment -> showBottomNav()
-//                R.id.addNewFragment -> showBottomNav()
-//                R.id.calculatorFragment -> showBottomNav()
-//                R.id.profileFragment -> showBottomNav()
-//                else -> binding.bottomNavigation.visibility = View.GONE
-//            }
-//        }
-//    }
-
-//    private fun showBottomNav() {
-//        binding.bottomNavigation.visibility = View.VISIBLE
-//    }
 }

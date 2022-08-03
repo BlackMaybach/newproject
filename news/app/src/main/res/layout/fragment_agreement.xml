@@ -29,6 +29,8 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar2"
             tools:layout_editor_absoluteX="0dp">
 
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,6 +38,13 @@
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar2"
                 tools:layout_editor_absoluteX="10dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"/>
 
                 <TextView
                     style="@style/myBoldTitle"
@@ -55,42 +64,8 @@
                     style="@style/myNormalTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Я, согласен(а), что:
+                  android:text="" />
 
-- данное Согласие действует в отношении следующих персональных данных:
-         Фамилия, имя, отчество;
-         Адрес проживания;
-         Паспортные данные;
-         Номер мобильного телефона;
-         Сведения, полученные от государственных органов и официальных источников
-- для рассмотрения моей заявки на кредит в веб приложения «Онлайн Кредит» будут использованы мои персональные данные, предоставленные мной или запрошенные по моему личному согласию от других источников (ГРС, СФ, КБ «Ишеним», сотовых операторов и т.д.)
-- в случае одобрения на предоставление кредита по услуге веб приложения «Онлайн Кредит», все требуемые и необходимые документы будут подписаны мной посредством электронной цифровой подписи.
-
-Я признаю настоящее согласие равнозначным моему согласию, подписанному собственноручной подписью и предоставленному на бумажном носителе, и беру на себя ответственность за достоверность предоставленных персональных данных.
-
-Условия настоящего Соглашения доступны для ознакомления на официальном сайте Компании: www.elet.kg
-"
-                    android:text="" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        style="@style/myNormalTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Открыть сайт Компании:" />
-
-                    <TextView
-                        style="@style/NormalYellowTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom_line"
-                        android:padding="1sp"
-                        android:text="www.elet.kg" />
-                </LinearLayout>
 
 
 

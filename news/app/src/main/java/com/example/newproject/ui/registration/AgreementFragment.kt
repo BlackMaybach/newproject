@@ -7,9 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.newproject.R
 import com.example.newproject.databinding.FragmentAgreementBinding
 import com.example.newproject.utils.Status
+import com.example.newproject.utils.gone
+import com.example.newproject.utils.show
 import com.example.newproject.utils.showToast
 
 
@@ -46,6 +47,9 @@ class AgreementFragment : Fragment() {
         viewModel.getAgreementText()
         viewModel.agreementText.observe(viewLifecycleOwner) {
             when (it.status) {
+
+                Status.LOADING -> binding.progressBar.show()
+
                 Status.SUCCESS -> {
                     binding.agreementText.text = it.data
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
@@ -53,7 +57,7 @@ class AgreementFragment : Fragment() {
                     } else {
                         binding.agreementText.text = Html.fromHtml(it.data)
                     }
-
+                    binding.progressBar.gone()
                 }
                 Status.ERROR -> {
                     requireContext().showToast(it.message)

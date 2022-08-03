@@ -59,6 +59,8 @@ class ProfileFormFragment : Fragment() {
                     binding.registrationHouseFact.text = it.data.residenceHouse
                     binding.registrationFlatFact.text = it.data.residenceFlat
 
+
+
                     getTypeDocument(documentSeries)
                 }
 
